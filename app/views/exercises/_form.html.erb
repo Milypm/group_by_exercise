@@ -1,4 +1,6 @@
 <%= form_with(model: exercise) do |form| %>
+  <%= render 'layouts/header_logged' %>
+  <%= form.submit nav_logged_right, class: 'nav-login-btn' %>
   <% if exercise.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
@@ -11,27 +13,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_area :name %>
+  <div class="field mt-4" style="width: 100%;">
+    <% form.label :name %>
+    <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
   </div>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.number_field :time %>
+  <div class="field mt-4" style="width: 100%;">
+    <% form.label :time %>
+    <%= form.number_field :time, autofocus: true, autocomplete: "time", placeholder:"Minutes", class:'new-session-name' %>
   </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
+  <div class="field mt-4" style="width: 100%;">
+    <% form.label :user_id %>
+    <%= form.number_field :user_id, autofocus: true, autocomplete: "user_id", display: hidden, class:'new-session-name' %>
   </div>
 
-  <div class="field">
-    <%= form.label :group_id %>
-    <%= form.number_field :group_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="field mt-4" style="width: 100%;">
+    <% form.label :group_id %>
+    <%= form.number_field :group_id, autofocus: true, autocomplete: "group_id", display: hidden, class:'new-session-name' %>
   </div>
 <% end %>

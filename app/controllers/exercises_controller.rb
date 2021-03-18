@@ -3,11 +3,11 @@ class ExercisesController < ApplicationController
 
   # GET /exercises or /exercises.json
   def index
-    @exercises_group = Exercise.all
+    @exercises = current_user.my_exercises
   end
 
   def index_nogroup
-    @exercises_nogroup = 
+    @exercises = current_user.external_exercises
   end
   # GET /exercises/1 or /exercises/1.json
   def show

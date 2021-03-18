@@ -19,11 +19,11 @@ class ApplicationController < ActionController::Base
     reset_session
   end
 
-  def disable_nav
-    @disable_nav = true
-  end
+  # def disable_nav
+  #   @disable_nav = true
+  # end
 
-  def random_num
-    [1, 2, 3].sample
-  end
+  # def random_num
+  #   [1, 2, 3].sample
+  # end
 end

@@ -1,0 +1,7 @@
+<%= render 'layouts/header_logged' %>
+<div class="myexercises-container">
+  <%= check_index_empty %>
+  <div class="exercise_add_new">
+    <%= link_to "ADD NEW EXERCISE", new_exercise_path, class: 'exercise_new_btn text-decoration-none text-light' %>
+  </div>
+</div>

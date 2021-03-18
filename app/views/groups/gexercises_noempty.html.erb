@@ -1,0 +1,25 @@
+<div class="group-title">
+  <p>Total time</p>
+</div>
+<div class="exercises-list">
+  <% @group_exercises.each do |g_exercise| %>
+    <div class="exercise-item">
+      <div class="exercise_name_date">
+        <p>Created by <%= g_exercise.exercise_creators %></p>
+        <p><%= g_exercise.name %></p>
+        <span><%= g_exercise.created_at %></span>
+      </div>
+      <p class="exercise-minutes">
+        <%= g_exercise.time %>
+        <span>minutes</span>
+      <div class="exercise_item_icons">
+        <%= link_to exercise_path(g_exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
+        <%= link_to edit_exercise_path(g_exercise.id) do %>
+          <i class="fas fa-pen"></i>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,11 +1,21 @@
-<nav class="navbar navbar-expand-lg navbar-light mb-0 sticky-top" style="background-color: #3778c2;">
-  <div class="container-fluid">
-    <div class="d-flex align-items-center">
-      <%= navcheck_main %>
-      <h5 class="color-light mt-2 p-0 fst-italic"><%= navcheck_user %></h5>
-    </div>
-    <div class="navbar-nav mb-2 mb-lg-0">
-      <%= nav_signin_signout %>
-    </div>
-  </div>
+<nav class="navbar-notlogged">
+  <div class="nav-notlogged-arrow">
+    <% if current_page?(controller: 'exercises', action: 'index') ||
+        current_page?(controller: 'exercises', action: 'index_nogroup') %>
+      <div class="dropdown">
+        <button class="dropbtn">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    <% else %>
+      <%= nav_logged_icon %>
+    <% end %>
+    <%= nav_logged_title %>
+  <div>
+  <h6 class="nav-logged-username"><%= nav_logged_right %><h6>
 </nav>

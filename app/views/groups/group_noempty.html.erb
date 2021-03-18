@@ -1,0 +1,13 @@
+<div class="profile-settings">
+  <% @groups.each do |group| %>
+    <%= link_to group_exercises_path(group.id), class: 'text-decoration-none' do %>
+      <div class="profile-setting-item">
+        <div><%= group.icon %></div>
+        <div class="group-name_date">
+          <p><%= group.name %></p>
+          <span><%= exercise.created_at %></span>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

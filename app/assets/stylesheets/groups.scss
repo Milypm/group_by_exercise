@@ -1,3 +1,18 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@media (min-width: 100px) and (max-width: 767px) {
+  .allgroups-container {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#45960c, #5fb523, #76c73c, #aadd85);
+    color: #fff;
+  }
+
+  .group-name_date {
+    display: flex;
+    flex-direction: column;
+  }
+}

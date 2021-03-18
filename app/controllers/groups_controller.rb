@@ -6,6 +6,9 @@ class GroupsController < ApplicationController
     @groups = Group.all
   end
 
+  def index_groupexercises(group)
+    @group_exercises = Group.find_by(id: group).exercises
+  end
   # GET /groups/1 or /groups/1.json
   def show
   end
