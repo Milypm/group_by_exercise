@@ -1,21 +1,10 @@
-<nav class="navbar-notlogged">
-  <div class="nav-notlogged-arrow">
-    <% if current_page?(controller: 'exercises', action: 'index') ||
-        current_page?(controller: 'exercises', action: 'index_nogroup') %>
-      <div class="dropdown">
-        <button class="dropbtn">
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-    <% else %>
-      <%= nav_logged_icon %>
-    <% end %>
-    <%= nav_logged_title %>
-  <div>
-  <h6 class="nav-logged-username"><%= nav_logged_right %><h6>
+<nav class="navbar-container">
+  <div class="nav-logged-three">
+    <%= nav_check_icon %>
+    <p class="mt-3 text-center" style="width: 150px;"><%= nav_logged_title %></p>
+    <div class="nav-login-name">
+      <h6><%= nav_logged_right %></h6>
+      <%= nav_show_logoutbtn %>
+    </div>
+  </div>
 </nav>

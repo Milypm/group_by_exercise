@@ -13,7 +13,82 @@
  *= require_tree .
  *= require_self
  */
+ /*
+ *= require font-awesome
+ */
+ @import 'font_awesome5_webfont';
  @media (min-width: 100px) and (max-width: 767px) {
+  .navbar-container {
+    background: #3778c2;
+    width: 100%;
+    max-width: 767px;
+    top: 0;
+    padding-left: 0;
+    height: 60px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    position: fixed;
+  }
+
+  .nav-notlogged-arrow {
+    width: 87%;
+    max-width: 767px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    padding-left: 5px;
+  }
+
+  .fa-arrow-left {
+    margin-top: 5px;
+    font-size: 25px;
+    color: #fff;
+  }
+
+  .nav-login-btn {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+    left: 80%;
+    top: -9px;
+    border: none;
+    color: #fff;
+  }
+
+  .nav-logged-three {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    color: #fff;
+    margin-left: 10px;
+  }
+
+  .nav-login-name {
+    position: relative;
+    top: 5px;
+    border: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 10px;
+  }
+
+  .nav-logout-btn {
+    position: relative;
+    top: -7px;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .nav-logout-btn:hover {
+    text-decoration: underline;
+  }
+
   .profile-settings {
     height: 150px;
     width: 300px;
@@ -26,5 +101,20 @@
   .profile-setting-item {
     display: flex;
     align-items: flex-start;
+  }
+
+  .profile-setting-item i {
+    font-size: 18px;
+    padding: 5px 6px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+
+  .profile-settings p {
+    margin-left: 15px;
+    width: 230px;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
   }
 }

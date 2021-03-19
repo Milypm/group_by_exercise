@@ -1,24 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Icon:</strong>
-  <%= @group.icon %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @group.user_id %>
-</p>
-
-<p>
-  <strong>Exercise:</strong>
-  <%= @group.exercise_id %>
-</p>
-
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+<div class="allgroups-container">
+  <%= check_groupindex_empty %>
+  <div class="group_add_new">
+    <%= link_to "ADD NEW", new_group_path, class: 'add_group-btn' %>
+  </div>
+</div>

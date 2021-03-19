@@ -1,7 +1,7 @@
 <div class="profile-container">
   <div class="profile-name">
     <i class="fas fa-user-astronaut"></i>
-    <p><%= @user.name %></p>
+    <p><%= current_user.name %></p>
   </div>
   <div class="profile-settings">
     <%= link_to exercises_path, class: 'text-light text-decoration-none' do %>
@@ -10,7 +10,7 @@
         <p>All my exercises</p>
       </div>
     <% end %>
-    <%= link_to 'external_exercises', class: 'text-light text-decoration-none' do %>
+    <%= link_to external_exercises_path, class: 'text-light text-decoration-none' do %>
       <div class="profile-setting-item">
         <i class="fas fa-skating"></i>
         <p>All my external exercises</p>

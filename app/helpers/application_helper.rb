@@ -19,40 +19,49 @@ module ApplicationHelper
     end
   end
 
-  def nav_notlogged_btn # define which form-button to display on '_header_notlogged' navbar
-    if current_page?(controller: 'users', action: 'create')
-      'Next'
-    else
-      'Log In'
-    end
-  end
-
-  def nav_logged_icon
-    if current_page?(controller: 'exercises', action: 'create')
-      link_to redirect_back(fallback_location: fallback_location), target: "_blank" do
+  def nav_check_icon
+    if current_page?(exercises_path) || current_page?(external_exercises_path)
+      render 'exercises/header_dropdown'
+    elsif current_page?(new_exercise_path) || current_page?(new_group_path)
+      link_to exercises_path do
         raw("<i class='fas fa-arrow-left'></i>")
       end
     end
   end
 
   def nav_logged_title
-    if current_page?(controller: 'exercises', action: 'index')
-      'EXERCISES'
-    elsif current_page?(controller: 'exercises', action: 'index_nogroup')
-      'EXTERNAL EXERCISES'
-    elsif current_page?(controller: 'exercises', action: 'create')
-      'ADD EXERCISE'
-    elsif current_page?(controller: 'groups', action: 'create')
-      'CREATE GROUP'
-    else
-      Group.find_by(user_id: user.id).name
+    if current_page?(exercises_path)
+      'MY EXERCISES'
+    elsif current_page?(external_exercises_path)
+      'MY EXTERNAL EXERCISES'
+    elsif current_page?(new_exercise_path)
+      'ADD NEW EXERCISE'
+    elsif current_page?(new_group_path)
+      'ADD NEW GROUP'
+    elsif current_page?(group_exercises_path)
+      'ADD NEW GROUP'
     end
   end
 
   def nav_logged_right
-    return unless current_page?(controller: 'exercises', action: 'index') || 
-        current_page?(controller: 'exercises', action: 'index_nogroup')
-        
-    current_user.name
+    if current_page?(exercises_path)
+      current_user.name
+    elsif current_page?(external_exercises_path)
+      current_user.name
+    elsif current_page?(group_exercises_path)
+      current_user.name
+    else
+      return
+    end
+  end
+
+  def nav_show_logoutbtn
+    if current_page?(exercises_path) || current_page?(external_exercises_path)
+      link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
+    elsif current_page?(group_exercises_path)
+      link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
+    else
+      return
+    end
   end
 end

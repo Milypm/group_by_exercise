@@ -4,10 +4,10 @@ class SessionsController < ApplicationController
   def show; end
 
   def create
-    user = User.find_by(params[:login][:id])
+    user = User.find_by_name(params[:login][:name])
     if user
       log_in(user)
-      redirect_to user_path(current_user.id), notice: 'Succesfully Signed In.'
+      redirect_to user_path(current_user.id)
     else
       redirect_to '/login', notice: 'Invalid username, try again with a valid username.'
     end

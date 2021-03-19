@@ -5,7 +5,7 @@
   <% @group_exercises.each do |g_exercise| %>
     <div class="exercise-item">
       <div class="exercise_name_date">
-        <p>Created by <%= g_exercise.exercise_creators %></p>
+        <p>Created by <%= @exercise_creator %></p>
         <p><%= g_exercise.name %></p>
         <span><%= g_exercise.created_at %></span>
       </div>

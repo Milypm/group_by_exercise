@@ -24,7 +24,7 @@ class ExercisesController < ApplicationController
 
   # POST /exercises or /exercises.json
   def create
-    @exercise = Exercise.new(exercise_params)
+    @exercise = current_user.exercises.create(exercise_params)
 
     respond_to do |format|
       if @exercise.save
@@ -42,10 +42,8 @@ class ExercisesController < ApplicationController
     respond_to do |format|
       if @exercise.update(exercise_params)
         format.html { redirect_to @exercise, notice: "Exercise was successfully updated." }
-        format.json { render :show, status: :ok, location: @exercise }
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @exercise.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -55,7 +53,6 @@ class ExercisesController < ApplicationController
     @exercise.destroy
     respond_to do |format|
       format.html { redirect_to exercises_url, notice: "Exercise was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 

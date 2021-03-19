@@ -1,6 +1,6 @@
 <%= form_for 'login' do |form| %>
   <%= render 'layouts/header_notlogged' %>
-  <%= form.submit nav_notlogged_btn,  method: :post, class: 'nav-login-btn' %>
+  <%= form.submit 'Log In', method: :post, class: 'nav-login-btn' %>
   <div class="field mt-4" style="width: 100%;">
     <% form.label :name %>
     <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
