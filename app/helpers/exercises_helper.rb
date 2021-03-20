@@ -1,13 +1,13 @@
 module ExercisesHelper
   def check_index_empty
-    render 'no_empty' unless @exercises.empty?
+    render 'empty' unless @exercises_w_group.first
 
-    render 'empty'
+    render 'withgroup_no_empty'
   end
 
-  def index_show_groupicon
-    return unless current_page?(controller: 'exercises', action: 'index')
-
-    raw("<div class='group-icon'></div>")
-  end
+  def check_indexnogroup_empty
+    render 'empty' unless @exercises_no_group.first
+    
+    render 'withoutgroup_no_empty'
+    end
 end

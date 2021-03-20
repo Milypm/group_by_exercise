@@ -30,6 +30,6 @@
 
   <div class="field text-center mt-2" style="width: 100%;">
     <%= form.label :group_id %>
-    <%= collection_select(:exercise, :group_id, Group.all, :id, :name) %>
+    <%= collection_select(:exercise, :group_id, Group.all, :id, :name, include_blank: 'None') %>
   </div>
 <% end %>

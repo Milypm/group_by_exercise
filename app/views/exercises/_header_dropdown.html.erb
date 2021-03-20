@@ -1,8 +1,8 @@
 <div class="dropdown">
-  <button class="dropbtn">Menu</button>
+  <button class="dropbtn"><i class="fas fa-bars"></i></button>
   <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
+    <%= link_to 'My Profile', user_path(current_user.id) %>
+    <%= link_to 'My External Exercises', external_exercises_path %>
+    <%= link_to 'All Groups', groups_path %>
   </div>
 </div>

@@ -7,44 +7,90 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(#3b7e0c, #5fb523, #72b841, #a7c990);
+    background: linear-gradient(#346f0a, #468916, #679b42, #97b97e);
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .allgroups-dropdown {
+    margin-top: 20px;
+  }
+
+  .allgroups-dropdown .dropbtn {
+    font-size: 25px;
+  }
+
+  .allgroups-dropdown .dropdown-content {
+    margin-left: 25px;
+  }
+
+  .no-groups {
+    font-size: 40px;
+    position: relative;
+    top: -30px;
+  }
+
+  .group_add_new {
+    width: 100%;
+    height: 90px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+  }
+
+  .group_new_btn {
+    width: 90%;
+    border: 2px solid #5fb523;
+    font-weight: bold;
+    color: #5fb523;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .group_new_bt:hover {
+    background: #72b841;
+  }
+
+  .group-settings {
+    position: relative;
+    top: -100px;
+    height: 150px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
+    font-size: 18px;
+    border: 2px solid red;
   }
 
   .group-setting-item {
     display: flex;
     align-items: flex-start;
+    border: 2px solid white;
   }
 
-  .group-setting-item i {
-    font-size: 18px;
+  .allgroups_icon{
+    font-size: 10px;
     padding: 5px 6px;
     border: 1px solid #fff;
     border-radius: 50%;
+    border: 3px solid blue;
   }
 
   .group-settings p {
-    margin-left: 15px;
-    width: 230px;
-    border-bottom: 1px solid #fff;
-    padding-bottom: 18px;
-    margin-bottom: 18px;
-  }
-
-  .group_add_new {
-    width: 100%;
-    border: 2px solid red;
-    text-align: center;
-  }
-
-  .add_group-btn {
-    color: #fff;
-    border: 2px solid white;
+    
   }
 
   .group-name_date {
     display: flex;
     flex-direction: column;
+    height: 50px;
+    border: 1px blue solid;
   }
 
   .group-icons-field {

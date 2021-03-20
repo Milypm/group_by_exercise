@@ -1,43 +1,36 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[ show edit update destroy ]
+  before_action :all_exercises, only: %i[ index index_nogroup ]
 
-  # GET /exercises or /exercises.json
   def index
-    @exercises = current_user.my_exercises
+    @exercises_w_group = all_exercises.with_group
   end
 
   def index_nogroup
-    @exercises = current_user.external_exercises
+    @exercises_no_group = all_exercises.without_group
   end
-  # GET /exercises/1 or /exercises/1.json
+
   def show
   end
 
-  # GET /exercises/new
   def new
     @exercise = Exercise.new
   end
 
-  # GET /exercises/1/edit
   def edit
   end
 
-  # POST /exercises or /exercises.json
   def create
     @exercise = current_user.exercises.create(exercise_params)
-
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to @exercise, notice: "Exercise was successfully created." }
-        format.json { render :show, status: :created, location: @exercise }
+        format.html { redirect_to exercises_path, notice: "Exercise was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @exercise.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /exercises/1 or /exercises/1.json
   def update
     respond_to do |format|
       if @exercise.update(exercise_params)
@@ -48,7 +41,6 @@ class ExercisesController < ApplicationController
     end
   end
 
-  # DELETE /exercises/1 or /exercises/1.json
   def destroy
     @exercise.destroy
     respond_to do |format|
@@ -57,13 +49,16 @@ class ExercisesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_exercise
-      @exercise = Exercise.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def exercise_params
-      params.require(:exercise).permit(:name, :time, :user_id, :group_id)
-    end
+  def set_exercise
+    @exercise = Exercise.find(params[:id])
+  end
+
+  def all_exercises
+    @exercises = Exercise.all
+  end
+
+  def exercise_params
+    params.require(:exercise).permit(:name, :time, :user_id, :group_id)
+  end
 end

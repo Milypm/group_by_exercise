@@ -2,7 +2,6 @@ class User < ApplicationRecord
   validates :name, presence: true
 
   has_many :exercises, dependent: :destroy
-  has_many :my_exercises, -> { where group_id: !nil }, class_name: 'Exercise'
-  has_many :external_exercises, -> { where group_id: nil }, class_name: 'Exercise'
-  has_many :groups
+  has_many :created_exercises, foreign_key: 'user_id', class_name: 'Exercise', dependent: :destroy
+  has_many :groups, dependent: :destroy
 end

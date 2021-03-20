@@ -7,4 +7,6 @@ class Exercise < ApplicationRecord
   has_many :groups
 
   scope :ordered_by_most_recent, -> { order(created_at: :desc) }
+  scope :with_group, -> { where(group_id: !nil) }
+  scope :without_group, -> { where(group_id: nil) }
 end

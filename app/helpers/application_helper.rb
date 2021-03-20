@@ -22,6 +22,8 @@ module ApplicationHelper
   def nav_check_icon
     if current_page?(exercises_path) || current_page?(external_exercises_path)
       render 'exercises/header_dropdown'
+    elsif current_page?(groups_path)
+      render 'exercises/header_dropdown'
     elsif current_page?(new_exercise_path) || current_page?(new_group_path)
       link_to exercises_path do
         raw("<i class='fas fa-arrow-left'></i>")
@@ -43,18 +45,6 @@ module ApplicationHelper
     end
   end
 
-  def nav_logged_right
-    if current_page?(exercises_path)
-      current_user.name
-    elsif current_page?(external_exercises_path)
-      current_user.name
-    elsif current_page?(group_exercises_path)
-      current_user.name
-    else
-      return
-    end
-  end
-
   def nav_show_logoutbtn
     if current_page?(exercises_path) || current_page?(external_exercises_path)
       link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
@@ -63,5 +53,59 @@ module ApplicationHelper
     else
       return
     end
+  end
+
+  # def get_icon_exercise(exercise)
+  #   group = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).name
+  #   if group == 'Cardio-running'
+  #     raw("<i class='fas fa-running'></i>")
+  #   elsif group == 'Cardio-walking'
+  #     raw("<i class='fas fa-walking'></i>")
+  #   elsif group == 'Cardio-other'
+  #     raw("<i class='fas fa-biking'></i>")
+  #   elsif group == 'Strenght-tone-up'
+  #     raw("<i class='fas fa-dumbbell'></i>")
+  #   elsif group == 'Flexibility'
+  #     raw("<i class='fas fa-expand-arrows-alt'></i>")
+  #   end
+  # end
+
+  # def get_icon_group(group)
+  #   name = group.name
+  #   if name == 'Cardio-running'
+  #     raw("<i class='fas fa-running'></i>")
+  #   elsif name == 'Cardio-walking'
+  #     raw("<i class='fas fa-walking'></i>")
+  #   elsif name == 'Cardio-other'
+  #     raw("<i class='fas fa-biking'></i>")
+  #   elsif name == 'Strenght-tone-up'
+  #     raw("<i class='fas fa-dumbbell'></i>")
+  #   elsif name == 'Flexibility'
+  #     raw("<i class='fas fa-expand-arrows-alt'></i>")
+  #   end
+  # end
+  
+  def get_icon_exercise(exercise)
+    group = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).name
+    groupname_icon[group]
+  end
+
+  def get_icon_group(group)
+    name = group.name
+    groupname_icon[name]
+  end
+
+  def groupname_icon
+    {
+      'Cardio-running' => raw("<i class='fas fa-running'></i>"),
+      'Cardio-walking' => raw("<i class='fas fa-walking'></i>"),
+      'Cardio-other' => raw("<i class='fas fa-biking'></i>"),
+      'Strenght-tone-up' => raw("<i class='fas fa-dumbbell'></i>"),
+      'Flexibility' => raw("<i class='fas fa-expand-arrows-alt'></i>")
+    }
+  end
+
+  def list_of_icons
+    %w[None Cardio-running Cardio-walking Cardio-other Strenght-tone-up Flexibility]
   end
 end

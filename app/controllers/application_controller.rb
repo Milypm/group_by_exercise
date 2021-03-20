@@ -19,9 +19,7 @@ class ApplicationController < ActionController::Base
     reset_session
   end
 
-  def list_of_icons
-    %w[running walking biking dumbbell expand-arrows-alt]
-  end
+
   # def random_num
   #   [1, 2, 3].sample
   # end

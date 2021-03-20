@@ -20,7 +20,7 @@
 
   <div class="field mt-2 d-flex justify-content-center" style="width: 100%;">
     <% form.label :icon %>
-    <%= form.select :icon, options_for_select(@group_icons), { include_blank: 'Select Group Icon' }, class:'group-icons-field' %>
+    <%= form.select :icon, options_for_select(@group_icons, { include_blank: true }), { include_blank: 'Select Group Icon' }, class:'group-icons-field' %>
   </div>
 
   <div class="field mt-2" style="width: 100%;">

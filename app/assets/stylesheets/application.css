@@ -67,6 +67,10 @@
     margin-left: 10px;
   }
 
+  .nav-title {
+    line-height: 20px;
+  }
+
   .nav-login-name {
     position: relative;
     top: 5px;
