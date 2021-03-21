@@ -1,12 +1,12 @@
 module GroupsHelper
   def check_gexercises_empty
-    render 'gexercises_noempty' unless @groups.empty?
+    render 'empty' unless Group.first.exists?
 
-    render 'empty'
+    render 'gexercises_noempty'
   end
 
   def check_groupindex_empty
-    render 'empty' unless Group.first
+    render 'empty' if @groups.nil?
 
     render 'group_noempty'
   end

@@ -51,46 +51,55 @@
     align-items: center;
   }
 
-  .group_new_bt:hover {
+  .group_new_btn:hover {
     background: #72b841;
   }
 
   .group-settings {
-    position: relative;
-    top: -100px;
-    height: 150px;
     width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 0 auto;
-    font-size: 18px;
-    border: 2px solid red;
+    margin: 20px auto 0 auto;
+    font-size: 20px;
   }
 
   .group-setting-item {
     display: flex;
-    align-items: flex-start;
-    border: 2px solid white;
+    margin-bottom: 18px;
+    height: 70px;
   }
 
-  .allgroups_icon{
-    font-size: 10px;
-    padding: 5px 6px;
-    border: 1px solid #fff;
+  .group-setting-item:hover {
+    opacity: .8;
+  }
+
+  .allgroups_icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .allgroups_icon i {
+    font-size: 25px;
+    padding: 10px 13px;
+    border: 2px solid #fff;
     border-radius: 50%;
-    border: 3px solid blue;
-  }
-
-  .group-settings p {
-    
   }
 
   .group-name_date {
-    display: flex;
-    flex-direction: column;
-    height: 50px;
-    border: 1px blue solid;
+    width: 70%;
+    margin-top: 5px;
+    margin-left: 20px;
+    border-bottom: 1px solid #fff;
+  }
+
+  .group-name {
+    font-size: 20px;
+  }
+
+  .group-date {
+    font-size: 15px;
+    margin-top: -13px;
   }
 
   .group-icons-field {

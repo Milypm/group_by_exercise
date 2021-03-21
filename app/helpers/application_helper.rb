@@ -11,8 +11,32 @@ module ApplicationHelper
     render 'layouts/alerts' if notice
   end
 
+  def dropdown_two
+    if current_page?(external_exercises_path) || current_page?(groups_path)
+      link_to 'My Exercises', exercises_path
+    elsif current_page?(exercises_path)
+      link_to 'My External Exercises', external_exercises_path
+    elsif current_page?(group_exercises_path)
+      link_to 'My Groups', groups_path
+    end
+  end
+
+  def dropdown_three
+    if current_page?(exercises_path) || current_page?(external_exercises_path)
+      link_to 'My Groups', groups_path
+    elsif current_page?(groups_path)
+      link_to 'My External Exercises', external_exercises_path
+    end
+  end
+
+  def dropdown_four
+    link_to 'Log Out', logout_path, method: :post if current_page?(groups_path)
+
+    return
+  end
+
   def nav_notlogged_title # define which title to display on '_header_notlogged' navbar
-    if current_page?(controller: 'users', action: 'create')
+    if current_page?(new_user_path)
       'REGISTER'
     else
       'LOGIN'
@@ -54,36 +78,6 @@ module ApplicationHelper
       return
     end
   end
-
-  # def get_icon_exercise(exercise)
-  #   group = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).name
-  #   if group == 'Cardio-running'
-  #     raw("<i class='fas fa-running'></i>")
-  #   elsif group == 'Cardio-walking'
-  #     raw("<i class='fas fa-walking'></i>")
-  #   elsif group == 'Cardio-other'
-  #     raw("<i class='fas fa-biking'></i>")
-  #   elsif group == 'Strenght-tone-up'
-  #     raw("<i class='fas fa-dumbbell'></i>")
-  #   elsif group == 'Flexibility'
-  #     raw("<i class='fas fa-expand-arrows-alt'></i>")
-  #   end
-  # end
-
-  # def get_icon_group(group)
-  #   name = group.name
-  #   if name == 'Cardio-running'
-  #     raw("<i class='fas fa-running'></i>")
-  #   elsif name == 'Cardio-walking'
-  #     raw("<i class='fas fa-walking'></i>")
-  #   elsif name == 'Cardio-other'
-  #     raw("<i class='fas fa-biking'></i>")
-  #   elsif name == 'Strenght-tone-up'
-  #     raw("<i class='fas fa-dumbbell'></i>")
-  #   elsif name == 'Flexibility'
-  #     raw("<i class='fas fa-expand-arrows-alt'></i>")
-  #   end
-  # end
   
   def get_icon_exercise(exercise)
     group = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).name
@@ -101,7 +95,7 @@ module ApplicationHelper
       'Cardio-walking' => raw("<i class='fas fa-walking'></i>"),
       'Cardio-other' => raw("<i class='fas fa-biking'></i>"),
       'Strenght-tone-up' => raw("<i class='fas fa-dumbbell'></i>"),
-      'Flexibility' => raw("<i class='fas fa-expand-arrows-alt'></i>")
+      'Flexibility' => raw("<i class='fas fa-skating'></i>")
     }
   end
 

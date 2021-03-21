@@ -1,13 +1,13 @@
 class ExercisesController < ApplicationController
   before_action :set_exercise, only: %i[ show edit update destroy ]
-  before_action :all_exercises, only: %i[ index index_nogroup ]
+
 
   def index
-    @exercises_w_group = all_exercises.with_group
+    @exercises_w_group = Exercise.with_group.most_recent
   end
 
   def index_nogroup
-    @exercises_no_group = all_exercises.without_group
+    @exercises_no_group = Exercise.without_group.most_recent
   end
 
   def show
@@ -52,10 +52,6 @@ class ExercisesController < ApplicationController
 
   def set_exercise
     @exercise = Exercise.find(params[:id])
-  end
-
-  def all_exercises
-    @exercises = Exercise.all
   end
 
   def exercise_params

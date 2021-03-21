@@ -1,3 +1,4 @@
+<div class="d-flex flex-column justify-content-center">
 <%= form_with(model: exercise) do |form| %>
   <%= render 'layouts/header_logged' %>
   <%= form.submit 'Save', class: 'nav-login-btn' %>
@@ -18,9 +19,9 @@
     <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
   </div>
 
-  <div class="field mt-1" style="width: 100%;">
+  <div class="field mt-1 d-flex justify-content-center" style="width: 100%;">
     <% form.label :time %>
-    <%= form.number_field :time, autofocus: true, autocomplete: "time", placeholder:"Minutes", class:'new-session-name' %>
+    <%= form.number_field :time, prompt: true, prompt: { hour: "Hours", minute: "Minutes" }, class:'new-session-name' %>
   </div>
 
   <div class="field mt-4" style="width: 100%;">
@@ -28,8 +29,9 @@
     <%= form.number_field :user_id, id: :exercise_user_id, value:current_user.id, type: :hidden, class:'new-session-name' %>
   </div>
 
-  <div class="field text-center mt-2" style="width: 100%;">
+  <div class="field text-center mt-2 d-flex flex-column align-items-center" style="width: 100%;">
     <%= form.label :group_id %>
     <%= collection_select(:exercise, :group_id, Group.all, :id, :name, include_blank: 'None') %>
   </div>
 <% end %>
+</div>

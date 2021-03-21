@@ -5,12 +5,12 @@
     <span class="m-0">$ timeSum</span>
   </div>
   <div class="exercises-list">
-    <% @exercises.without_group.each do |exercise| %>
+    <% @exercises_no_group.each do |exercise| %>
       <div class="exercise-item">
         <div class="d-flex">
           <div class="exercise-name-date">
             <p><%= exercise.name %></p>
-            <span><%= exercise.created_at %></span>
+            <span><%= exercise.created_at.strftime("%d %b %Y") %></span>
           </div>
         </div>
         <p class="exercise-minutes">

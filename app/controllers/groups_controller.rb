@@ -3,9 +3,7 @@ class GroupsController < ApplicationController
   before_action :icons, only: %i[ new create edit update ]
 
   def index
-    @groups = Group.all
-    @names = @groups.each { |group| group.map do |g|
-       }
+    @groups = Group.all.order(:name)
   end
 
   def index_groupexercises(group)
