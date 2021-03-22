@@ -62,8 +62,22 @@
     justify-content: space-between;
   }
 
+  .myg_exercises-container {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   .no-exercises {
     font-size: 40px;
+  }
+
+  .g_exercises_main {
+    position: relative;
+    top: 0;
   }
 
   .totaltime {
@@ -86,26 +100,88 @@
 
   .exercise-item {
     background: #fff;
-    display: flex;
-    justify-content: space-between;
+    height: 85px;
     margin-bottom: 10px;
     padding: 10px;
+  }
+
+  .ex-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .exitem-icon-name {
+    width: 64%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 0;
+  }
+
+  .g_exitem-icon-name-author {
+    width: 64%;
+    display: flex;
+    justify-content: flex-start;
+    margin-right: 0;
+  }
+
+  .exitem-icon i {
+    font-size: 34px;
+    color: #fff;
+    background: #5fb523;
   }
 
   .exercise-name-date {
     display: flex;
     flex-direction: column;
-    font-size: 10px;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15.5px;
   }
 
-  .exercise-minutes {
+  .g_exercise_name_date {
     display: flex;
     flex-direction: column;
+    font-size: 10px;
+    margin-left: 10px;
+  }
+
+  .g_exercise_name {
+    font-size: 15.5px;
+  }
+
+  .g_exercise_author {
+    margin-top: -15px;
+    font-size: 11.5px;
+  }
+
+  .g_exercise_name_date span {
+    margin-top: -13px;
+  }
+
+  .exercise-name-date span {
+    font-size: 11px;
+    margin-top: -5px
+  }
+
+  .exercise-time {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+    margin-left: -17px;
+  }
+
+  .exercise-time span {
+    font-size: 14px;
+    font-weight: bold;
   }
 
   .exercise_item_icons {
     display: flex;
+    flex-direction: column;
+    margin-left: -15px;
     justify-content: space-between;
+    height: 56px;
   }
 
   .exercise_add_new {

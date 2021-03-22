@@ -1,6 +1,9 @@
-<div class="allgroups-container">
-  <%= check_groupindex_empty %>
-  <div class="group_add_new">
-    <%= link_to "ADD NEW", new_group_path, class: 'add_group-btn' %>
+<%= render 'layouts/header_logged' %>
+<div class="myg_exercises-container">
+  <div class="d-flex flex-column justify-content-between" style="height: 100%;">
+    <div class="g_exercises_main"><%= check_gexercises_empty %></div>
+    <div class="exercise_add_new">
+      <%= link_to "ADD NEW EXERCISE", new_exercise_path, class: 'exercise_new_btn text-decoration-none text-light' %>
+    </div>
   </div>
 </div>

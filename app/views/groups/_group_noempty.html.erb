@@ -1,8 +1,8 @@
 <div class="group-settings">
   <% @groups.each do |group| %>
-    <%= link_to group_exercises_path(group.id), class: 'text-light text-decoration-none' do %>
+    <%= link_to group_path(group.id), class: 'text-light text-decoration-none' do %>
       <div class="group-setting-item">
-        <div class="allgroups_icon"><%= get_icon_group(group) %></div>
+        <div class="allgroups_icon"><%= raw(group.icon) %></div>
         <div class="group-name_date">
           <p class="group-name"><%= group.name %></p>
           <p class="group-date"><%= group.created_at.strftime("%d %b %Y") %></p>

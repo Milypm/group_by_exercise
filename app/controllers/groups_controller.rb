@@ -1,19 +1,13 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: %i[ edit update destroy ]
+  before_action :set_group, only: %i[ show edit update destroy ]
   before_action :icons, only: %i[ new create edit update ]
 
   def index
     @groups = Group.all.order(:name)
   end
-
-  def index_groupexercises(group)
-    @group_exercises = Group.find_by(id: group).exercises
-    @exercise_creator = User.find_by(id: (Exercise.find_by(id: @group.exercise_id, user_id: @group.user_id).user_id))
-  end
-
+  
   def show
-    @groups = Group.all.includes(:user)
-    @group = Group.find_by(id: params[:id])
+    @group_exercises = Exercise.all.select { |e| e.group_id == @group.id }
   end
 
   def new

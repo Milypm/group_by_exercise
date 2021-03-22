@@ -19,9 +19,9 @@
     <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
   </div>
 
-  <div class="field mt-1 d-flex justify-content-center" style="width: 100%;">
+  <div class="field mt-1" style="width: 100%;">
     <% form.label :time %>
-    <%= form.number_field :time, prompt: true, prompt: { hour: "Hours", minute: "Minutes" }, class:'new-session-name' %>
+    <%= form.number_field :time, placeholder: 'Minutes', class:'new-session-name' %>
   </div>
 
   <div class="field mt-4" style="width: 100%;">

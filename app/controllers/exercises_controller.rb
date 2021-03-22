@@ -3,11 +3,11 @@ class ExercisesController < ApplicationController
 
 
   def index
-    @exercises_w_group = Exercise.with_group.most_recent
+    @exercises_w_group = current_user.exercises.with_group.most_recent
   end
 
   def index_nogroup
-    @exercises_no_group = Exercise.without_group.most_recent
+    @exercises_no_group = current_user.exercises.without_group.most_recent
   end
 
   def show
@@ -24,7 +24,11 @@ class ExercisesController < ApplicationController
     @exercise = current_user.exercises.create(exercise_params)
     respond_to do |format|
       if @exercise.save
-        format.html { redirect_to exercises_path, notice: "Exercise was successfully created." }
+        if @exercise.group_id.nil?
+          format.html { redirect_to external_exercises_path, notice: "Exercise was successfully created." }
+        else
+          format.html { redirect_to exercises_path, notice: "Exercise was successfully created." }
+        end
       else
         format.html { render :new, status: :unprocessable_entity }
       end

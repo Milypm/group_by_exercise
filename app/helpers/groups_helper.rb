@@ -1,6 +1,6 @@
 module GroupsHelper
   def check_gexercises_empty
-    render 'empty' unless Group.first.exists?
+    render 'empty' if @group_exercises.nil?
 
     render 'gexercises_noempty'
   end
@@ -9,5 +9,9 @@ module GroupsHelper
     render 'empty' if @groups.nil?
 
     render 'group_noempty'
+  end
+
+  def author(exercise)
+    User.find_by(id: Exercise.find_by(id: exercise.id).user_id).name
   end
 end

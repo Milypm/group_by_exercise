@@ -1,21 +1,20 @@
 <div class="d-flex flex-column">
   <div class="totaltime">
-  <span class=""><%= current_user.name if logged_in? %></span> <!--Just for showing current user, remove later-->
     <p class="m-0">Total time</p>
-    <span class="m-0">$ timeSum</span>
+    <span class="m-0"><%= exercise_nogroup_time %></span>
   </div>
   <div class="exercises-list">
     <% @exercises_no_group.each do |exercise| %>
       <div class="exercise-item">
-        <div class="d-flex">
+      <div class="ex-item">
+        <div class="exitem-icon-name">
           <div class="exercise-name-date">
             <p><%= exercise.name %></p>
             <span><%= exercise.created_at.strftime("%d %b %Y") %></span>
           </div>
         </div>
-        <p class="exercise-minutes">
-          <%= exercise.time %>
-          <span>minutes</span>
+        <p class="exercise-time">
+          <span><%= exercise.time %> mins.</span>
         </p>
         <div class="exercise_item_icons">
           <%= link_to exercise_path(exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
@@ -24,6 +23,7 @@
           <%= link_to edit_exercise_path(exercise.id) do %>
             <i class="fas fa-pen"></i>
           <% end %>
+        </div>
         </div>
       </div>
     <% end %>

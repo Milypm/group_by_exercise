@@ -16,14 +16,14 @@ module ApplicationHelper
       link_to 'My Exercises', exercises_path
     elsif current_page?(exercises_path)
       link_to 'My External Exercises', external_exercises_path
-    elsif current_page?(group_exercises_path)
-      link_to 'My Groups', groups_path
+    elsif current_page?(group_path)
+      link_to 'All Groups', groups_path
     end
   end
 
   def dropdown_three
     if current_page?(exercises_path) || current_page?(external_exercises_path)
-      link_to 'My Groups', groups_path
+      link_to 'All Groups', groups_path
     elsif current_page?(groups_path)
       link_to 'My External Exercises', external_exercises_path
     end
@@ -46,7 +46,7 @@ module ApplicationHelper
   def nav_check_icon
     if current_page?(exercises_path) || current_page?(external_exercises_path)
       render 'exercises/header_dropdown'
-    elsif current_page?(groups_path)
+    elsif current_page?(groups_path) || current_page?(group_path)
       render 'exercises/header_dropdown'
     elsif current_page?(new_exercise_path) || current_page?(new_group_path)
       link_to exercises_path do
@@ -64,15 +64,15 @@ module ApplicationHelper
       'ADD NEW EXERCISE'
     elsif current_page?(new_group_path)
       'ADD NEW GROUP'
-    elsif current_page?(group_exercises_path)
-      'ADD NEW GROUP'
+    else
+      "#{@group.name.upcase}"
     end
   end
 
   def nav_show_logoutbtn
     if current_page?(exercises_path) || current_page?(external_exercises_path)
       link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
-    elsif current_page?(group_exercises_path)
+    elsif current_page?(group_path)
       link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
     else
       return
@@ -80,13 +80,10 @@ module ApplicationHelper
   end
   
   def get_icon_exercise(exercise)
-    group = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).name
-    groupname_icon[group]
-  end
-
-  def get_icon_group(group)
-    name = group.name
-    groupname_icon[name]
+    return unless exercise.group_id != nil
+    
+    group_icon = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).icon
+    raw(group_icon)
   end
 
   def groupname_icon
@@ -97,9 +94,5 @@ module ApplicationHelper
       'Strenght-tone-up' => raw("<i class='fas fa-dumbbell'></i>"),
       'Flexibility' => raw("<i class='fas fa-skating'></i>")
     }
-  end
-
-  def list_of_icons
-    %w[None Cardio-running Cardio-walking Cardio-other Strenght-tone-up Flexibility]
   end
 end

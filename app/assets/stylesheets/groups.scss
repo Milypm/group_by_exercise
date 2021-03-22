@@ -2,20 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 @media (min-width: 100px) and (max-width: 767px) {
-  .allgroups-container {
+  .allgroups-container,
+  .allgroups-subcont {
     position: absolute;
     top: 0;
     width: 100%;
-    height: 100%;
-    background: linear-gradient(#346f0a, #468916, #679b42, #97b97e);
+    background: linear-gradient(#346f0a, #468916, #5fb523);
     color: #fff;
+  }
+
+  .allgroups-subcont {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   .allgroups-dropdown {
-    margin-top: 20px;
+    margin-top: 0px;
   }
 
   .allgroups-dropdown .dropbtn {
@@ -39,6 +42,8 @@
     display: flex;
     justify-content: center;
     padding: 15px 0;
+    position: fixed;
+    bottom: 0;
   }
 
   .group_new_btn {
@@ -60,14 +65,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin: 20px auto 0 auto;
+    margin: 0 auto;
     font-size: 20px;
   }
 
   .group-setting-item {
     display: flex;
     margin-bottom: 18px;
-    height: 70px;
   }
 
   .group-setting-item:hover {
@@ -80,10 +84,29 @@
   }
 
   .allgroups_icon i {
-    font-size: 25px;
-    padding: 10px 13px;
     border: 2px solid #fff;
     border-radius: 50%;
+  }
+
+  .fa-running,
+  .fa-walking {
+    font-size: 25px;
+    padding: 10px 15px;
+  }
+
+  .fa-biking {
+    font-size: 22px;
+    padding: 11px 9px;
+  }
+
+  .fa-skating {
+    font-size: 22px;
+    padding: 11px 13px;
+  }
+
+  .fa-dumbbell {
+    font-size: 21px;
+    padding: 11px 10px;
   }
 
   .group-name_date {

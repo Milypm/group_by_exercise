@@ -22,10 +22,10 @@ class UsersController < ApplicationController
   # POST /users or /users.json
   def create
     @user = User.new(user_params)
-
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: "User was successfully created." }
+        log_in @user
+        format.html { redirect_to user_path(current_user.id), notice: "User was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -45,9 +45,10 @@ class UsersController < ApplicationController
 
   # DELETE /users/1 or /users/1.json
   def destroy
-    @user.destroy
+    reset_session if @user == current_user
+    current_user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
+      format.html { redirect_to users_url, notice: "User was successfully deleted." }
     end
   end
 
