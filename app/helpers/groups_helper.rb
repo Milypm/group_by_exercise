@@ -1,14 +1,14 @@
 module GroupsHelper
-  def check_gexercises_empty
-    render 'empty' if @group_exercises.nil?
-
-    render 'gexercises_noempty'
-  end
-
   def check_groupindex_empty
     render 'empty' if @groups.nil?
 
     render 'group_noempty'
+  end
+  
+  def check_gexercises_empty
+    render 'empty' if @group_exercises.nil?
+
+    render 'gexercises_noempty'
   end
 
   def author(exercise)

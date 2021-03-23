@@ -1,7 +1,7 @@
 <div class="profile-container">
-  <%= link_to 'Log Out', logout_path, method: :post, class: 'profile-logout' %>
+  <div class="profile-dropdown"><%= render 'exercises/header_dropdown' %></div>
   <div class="profile-name">
-    <i class="fas fa-user-astronaut"></i>
+    <%= user_avatar(current_user) %>
     <p><%= current_user.name %></p>
   </div>
   <div class="profile-settings">

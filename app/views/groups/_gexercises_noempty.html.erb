@@ -1,7 +1,7 @@
 
 <div class="totaltime">
   <p class="m-0">Total time</p>
-  <span class="m-0"><%= exercise_group_time %></span>
+  <span class="m-0"><%= group_exercises_time %></span>
 </div>
 <div class="exercises-list">
   <% @group_exercises.each do |g_exercise| %>
@@ -16,15 +16,14 @@
           </div>
         </div>
         <p class="exercise-time">
-          <%= g_exercise.time %>
-          <span>minutes</span>
+          <span><%= g_exercise.time %><br>min.</span>
         </p>
         <div class="exercise_item_icons">
-          <%= link_to exercise_path(g_exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <i class="far fa-trash-alt"></i>
-          <% end %>
           <%= link_to edit_exercise_path(g_exercise.id) do %>
             <i class="fas fa-pen"></i>
+          <% end %>
+          <%= link_to exercise_path(g_exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
       </div>

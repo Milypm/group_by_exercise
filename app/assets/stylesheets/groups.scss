@@ -1,133 +1,105 @@
 // Place all the styles related to the groups controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-@media (min-width: 100px) and (max-width: 767px) {
-  .allgroups-container,
-  .allgroups-subcont {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(#346f0a, #468916, #5fb523);
-    color: #fff;
-  }
-
-  .allgroups-subcont {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .allgroups-dropdown {
-    margin-top: 0px;
-  }
-
-  .allgroups-dropdown .dropbtn {
-    font-size: 25px;
-  }
-
-  .allgroups-dropdown .dropdown-content {
-    margin-left: 25px;
-  }
-
-  .no-groups {
-    font-size: 40px;
-    position: relative;
-    top: -30px;
-  }
-
-  .group_add_new {
-    width: 100%;
-    height: 90px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 15px 0;
-    position: fixed;
-    bottom: 0;
-  }
-
-  .group_new_btn {
-    width: 90%;
-    border: 2px solid #5fb523;
-    font-weight: bold;
-    color: #5fb523;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .group_new_btn:hover {
-    background: #72b841;
-  }
-
-  .group-settings {
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 0 auto;
-    font-size: 20px;
-  }
-
-  .group-setting-item {
-    display: flex;
-    margin-bottom: 18px;
-  }
-
-  .group-setting-item:hover {
-    opacity: .8;
-  }
-
-  .allgroups_icon {
-    display: flex;
-    align-items: center;
-  }
-
-  .allgroups_icon i {
-    border: 2px solid #fff;
-    border-radius: 50%;
-  }
-
-  .fa-running,
-  .fa-walking {
-    font-size: 25px;
-    padding: 10px 15px;
-  }
-
-  .fa-biking {
-    font-size: 22px;
-    padding: 11px 9px;
-  }
-
-  .fa-skating {
-    font-size: 22px;
-    padding: 11px 13px;
-  }
-
-  .fa-dumbbell {
-    font-size: 21px;
-    padding: 11px 10px;
-  }
-
-  .group-name_date {
-    width: 70%;
-    margin-top: 5px;
-    margin-left: 20px;
-    border-bottom: 1px solid #fff;
-  }
-
-  .group-name {
-    font-size: 20px;
-  }
-
-  .group-date {
-    font-size: 15px;
-    margin-top: -13px;
-  }
-
-  .group-icons-field {
-    width: 50%;
-    height: 50px;
-    font-size: 15px;
-  }
+.allgroups-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#346f0a, #468916, #5fb523);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.no-groups {
+  font-size: 40px;
+  position: relative;
+  top: -30px;
+}
+.group_add_new {
+  width: 100%;
+  height: 90px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+  position: fixed;
+  bottom: 0;
+}
+.group_new_btn {
+  width: 90%;
+  border: 2px solid #5fb523;
+  font-weight: bold;
+  color: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.group_new_btn:hover {
+  background: #72b841;
+  color: #fff;
+}
+.group-settings {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 15px auto;
+  font-size: 20px;
+}
+.group-setting-item {
+  display: flex;
+  margin-bottom: 18px;
+}
+.group-setting-item:hover {
+  opacity: .8;
+}
+.allgroups_icon {
+  display: flex;
+  align-items: center;
+}
+.allgroups_icon i {
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+.fa-running,
+.fa-walking {
+  font-size: 25px;
+  padding: 10px 15px;
+}
+.fa-biking {
+  font-size: 22px;
+  padding: 11px 9px;
+}
+.fa-skating {
+  font-size: 22px;
+  padding: 11px 13px;
+}
+.fa-dumbbell {
+  font-size: 21px;
+  padding: 11px 10px;
+}
+.group-name_date {
+  width: 70%;
+  margin-top: 5px;
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+}
+.group-name {
+  font-size: 20px;
+}
+.group-date {
+  font-size: 15px;
+  margin-top: -13px;
+}
+.edit-group-icon {
+  color: #fff;
+  font-size: 15px;
+}
+.group-icons-field {
+  width: 50%;
+  height: 50px;
+  font-size: 15px;
 }

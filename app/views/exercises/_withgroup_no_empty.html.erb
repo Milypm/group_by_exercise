@@ -15,14 +15,14 @@
             </div>
           </div>
           <p class="exercise-time">
-            <span><%= exercise.time %> mins.</span>
+            <span><%= exercise.time %><br>min.</span>
           </p>
           <div class="exercise_item_icons">
-            <%= link_to exercise_path(exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
             <%= link_to edit_exercise_path(exercise.id) do %>
               <i class="fas fa-pen"></i>
+            <% end %>
+            <%= link_to exercise_path(exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <i class="far fa-trash-alt"></i>
             <% end %>
           </div>
         </div>

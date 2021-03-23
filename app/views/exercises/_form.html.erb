@@ -1,37 +1,37 @@
 <div class="d-flex flex-column justify-content-center">
-<%= form_with(model: exercise) do |form| %>
-  <%= render 'layouts/header_logged' %>
-  <%= form.submit 'Save', class: 'nav-login-btn' %>
-  <% if exercise.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
-
-      <ul>
-        <% exercise.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+  <%= form_with(model: exercise) do |form| %>
+    <%= render 'layouts/navbar' %>
+    <%= form.submit 'Save', class: 'nav-login-btn savebtn-exercise-edit' %>
+    <% if exercise.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
+  
+        <ul>
+          <% exercise.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field mt-4" style="width: 100%;">
+      <% form.label :name %>
+      <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
+    </div>
+  
+    <div class="field mt-1" style="width: 100%;">
+      <% form.label :time %>
+      <%= form.number_field :time, placeholder: 'Minutes', class:'new-session-name' %>
+    </div>
+  
+    <div class="field mt-4" style="width: 100%;">
+      <% form.label :user_id %>
+      <%= form.number_field :user_id, id: :exercise_user_id, value:current_user.id, type: :hidden, class:'new-session-name' %>
+    </div>
+  
+    <div class="field text-center mt-2 d-flex flex-column align-items-center" style="width: 100%;">
+      <%= form.label :group_id %>
+      <%= collection_select(:exercise, :group_id, Group.all, :id, :name, include_blank: 'None') %>
     </div>
   <% end %>
-
-  <div class="field mt-4" style="width: 100%;">
-    <% form.label :name %>
-    <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
-  </div>
-
-  <div class="field mt-1" style="width: 100%;">
-    <% form.label :time %>
-    <%= form.number_field :time, placeholder: 'Minutes', class:'new-session-name' %>
-  </div>
-
-  <div class="field mt-4" style="width: 100%;">
-    <% form.label :user_id %>
-    <%= form.number_field :user_id, id: :exercise_user_id, value:current_user.id, type: :hidden, class:'new-session-name' %>
-  </div>
-
-  <div class="field text-center mt-2 d-flex flex-column align-items-center" style="width: 100%;">
-    <%= form.label :group_id %>
-    <%= collection_select(:exercise, :group_id, Group.all, :id, :name, include_blank: 'None') %>
-  </div>
-<% end %>
 </div>

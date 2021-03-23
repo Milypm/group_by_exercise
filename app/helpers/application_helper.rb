@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def root_page # define which main page to display
+  def root_page
     if logged_in?
       render 'users/profile' 
     else
@@ -11,12 +11,22 @@ module ApplicationHelper
     render 'layouts/alerts' if notice
   end
 
+  def dropdown_one
+    if @user && current_page?(user_path(@user))
+      link_to 'Edit', edit_user_path(current_user.id)
+    else
+      link_to 'My Profile', user_path(current_user.id)
+    end
+  end
+
   def dropdown_two
     if current_page?(external_exercises_path) || current_page?(groups_path)
       link_to 'My Exercises', exercises_path
     elsif current_page?(exercises_path)
       link_to 'My External Exercises', external_exercises_path
-    elsif current_page?(group_path)
+    elsif @user && current_page?(user_path(@user))
+      link_to 'Log Out', logout_path, method: :post
+    else
       link_to 'All Groups', groups_path
     end
   end
@@ -35,7 +45,7 @@ module ApplicationHelper
     return
   end
 
-  def nav_notlogged_title # define which title to display on '_header_notlogged' navbar
+  def nav_notlogged_title
     if current_page?(new_user_path)
       'REGISTER'
     else
@@ -44,19 +54,31 @@ module ApplicationHelper
   end
 
   def nav_check_icon
-    if current_page?(exercises_path) || current_page?(external_exercises_path)
-      render 'exercises/header_dropdown'
-    elsif current_page?(groups_path) || current_page?(group_path)
-      render 'exercises/header_dropdown'
-    elsif current_page?(new_exercise_path) || current_page?(new_group_path)
-      link_to exercises_path do
+    if logged_in?
+      if current_page?(new_exercise_path) || current_page?(new_group_path)
+        link_to exercises_path do
+          raw("<i class='fas fa-arrow-left'></i>")
+        end
+      elsif params[:action] == 'edit' || params[:controller] == 'groups' && params[:action] == 'show'
+        link_to exercises_path do
+          raw("<i class='fas fa-arrow-left'></i>")
+        end
+      else
+        render 'exercises/header_dropdown'
+      end
+    else
+      link_to root_path do
         raw("<i class='fas fa-arrow-left'></i>")
       end
     end
   end
 
   def nav_logged_title
-    if current_page?(exercises_path)
+    if current_page?(login_path)
+      'LOGIN'
+    elsif current_page?(new_user_path)
+      'REGISTER'
+    elsif current_page?(exercises_path)
       'MY EXERCISES'
     elsif current_page?(external_exercises_path)
       'MY EXTERNAL EXERCISES'
@@ -64,18 +86,22 @@ module ApplicationHelper
       'ADD NEW EXERCISE'
     elsif current_page?(new_group_path)
       'ADD NEW GROUP'
-    else
+    elsif params[:controller] == 'exercises' && params[:action] == 'edit'
+      'EDIT EXERCISE'
+    elsif params[:controller] == 'groups' && params[:action] == 'show'
       "#{@group.name.upcase}"
+    elsif params[:controller] == 'groups' && params[:action] == 'edit'
+      'EDIT GROUP'
+    else
+      'EDIT PROFILE'
     end
   end
 
   def nav_show_logoutbtn
     if current_page?(exercises_path) || current_page?(external_exercises_path)
-      link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
-    elsif current_page?(group_path)
-      link_to 'Log Out', logout_path, method: :post, class: 'nav-logout-btn'
-    else
-      return
+      link_to 'Log Out', logout_path, method: :post
+    elsif params[:controller] == 'groups' && params[:action] == 'show'
+      link_to 'Log Out', logout_path, method: :post
     end
   end
   

@@ -1,22 +1,21 @@
-@media (min-width: 100px) and (max-width: 767px) {
-  body {
-    background: #f4f6f9;
-    margin: 0 auto;
-  }
-
-  .home-container {
-    height: 750px;
-    padding-bottom: 25px;
-  }
-
-  .home-btn-blue {
-    background: #3778c2;
-    color: #fff;
-    text-decoration: none;
-    text-align: center;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+body {
+  background: #f4f6f9;
+  margin: 0 auto;
+}
+.home-container {
+  height: 750px;
+  padding-bottom: 25px;
+}
+.home-btn-blue {
+  background: #3778c2;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.home-btn-blue:hover {
+  background: #2f6baf;
 }

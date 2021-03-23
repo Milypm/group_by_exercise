@@ -1,5 +1,5 @@
 <%= form_with(model: group) do |form| %>
-  <%= render 'layouts/header_logged' %>
+  <%= render 'layouts/navbar' %>
   <%= form.submit 'Save', class: 'nav-login-btn' %>
   <% if group.errors.any? %>
     <div id="error_explanation">

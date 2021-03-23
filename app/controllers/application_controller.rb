@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   helper_method :log_out
   helper_method :exercise_group_time
   helper_method :exercise_nogroup_time
+  helper_method :group_exercises_time
+  # helper_method :generate_avatar
 
   def log_in(user)
     session[:user_id] = user.id
@@ -22,30 +24,43 @@ class ApplicationController < ActionController::Base
   end
 
   def exercise_group_time
-    time_counter = 0
+    @time_counter = 0
     Exercise.with_group.each do |e|
-      time_counter += e.time
+      @time_counter += e.time
     end
-    if time_counter > 60
-      hours = (time_counter / 60).floor
-      minutes = time_counter % 60
-      "#{hours} hours #{minutes} minutes"
-    else
-      "#{time_counter} minutes"
-    end
+    get_hours_mins
   end
 
   def exercise_nogroup_time
-    time_counter = 0
+    @time_counter = 0
     Exercise.without_group.each do |e|
-      time_counter += e.time
+      @time_counter += e.time
     end
-    if time_counter > 60
-      hours = (time_counter / 60).floor
-      minutes = time_counter % 60
-      "#{hours} hours #{minutes} minutes"
+    get_hours_mins
+  end
+
+  def group_exercises_time
+    @time_counter = 0
+    @group_exercises.each do |e|
+      @time_counter += e.time
+    end
+    get_hours_mins
+  end
+
+  # def generate_avatar
+  #   random_n = rand(1..4)
+  #   helpers.avatar_images.select { |k, v| k == random_n}
+  # end
+
+  private
+
+  def get_hours_mins
+    if @time_counter > 60
+      hours = (@time_counter / 60).floor
+      minutes = @time_counter % 60
+      "#{hours} hr #{minutes} min"
     else
-      "#{time_counter} minutes"
+      "#{@time_counter} min"
     end
   end
 end

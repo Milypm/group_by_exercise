@@ -1,0 +1,12 @@
+<%= form_with(model: @user) do |form| %>
+<%= render 'layouts/navbar' %>
+  <%= form.submit 'Next', class: 'nav-login-btn nav-newuser-btn' %>
+  <div class="field mt-4" style="width: 100%;">
+    <% form.label :name %>
+    <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
+    <div class="form-image-container">
+      <p>Select a profile image.</p>
+      <%= form.file_field :user_image, class: 'browse-img' %>
+    </div>
+  </div>
+<% end %>
