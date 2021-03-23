@@ -2,11 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 .allgroups-container {
+  font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(#346f0a, #468916, #5fb523);
+  background: linear-gradient(#346f0a, #468916, #5fb523, #759c5a);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -50,6 +51,7 @@
 .group-setting-item {
   display: flex;
   margin-bottom: 18px;
+  align-items: flex-start;
 }
 .group-setting-item:hover {
   opacity: .8;
@@ -57,6 +59,7 @@
 .allgroups_icon {
   display: flex;
   align-items: center;
+  margin-top: 15px;
 }
 .allgroups_icon i {
   border: 2px solid #fff;
@@ -65,7 +68,7 @@
 .fa-running,
 .fa-walking {
   font-size: 25px;
-  padding: 10px 15px;
+  padding: 9px 13px;
 }
 .fa-biking {
   font-size: 22px;
@@ -87,11 +90,18 @@
   justify-content: space-between;
   border-bottom: 1px solid #fff;
 }
+.group-name_date i:hover {
+  color: #3778c2;
+}
+.g_exitem-icon-name-author {
+  font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  width: 70%;
+}
 .group-name {
   font-size: 20px;
 }
 .group-date {
-  font-size: 15px;
+  font-size: 12px;
   margin-top: -13px;
 }
 .edit-group-icon {

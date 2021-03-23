@@ -16,7 +16,16 @@
  /*
  *= require font-awesome
  */
-@import 'font_awesome5_webfont';
+@font-face {
+  font-family: 'faster-one';
+  src: url('FasterOne-Regular.ttf');
+  font-family: 'proxima-nova-light';
+  src: url('proxima-nova-light.woff');
+  font-family: 'proxima-nova-bold';
+  src: url('proxima-nova-bold.woff');
+  font-family: 'sonsie';
+  src: url('SonsieOne-Regular.ttf');
+}
 @media (min-width: 100px) and (max-width: 768px) {
   a:hover {
     color: inherit;

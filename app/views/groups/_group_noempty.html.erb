@@ -6,11 +6,10 @@
         <div class="group-name_date">
           <div class="d-flex flex-column">
             <p class="group-name"><%= group.name %></p>
+            <p class="group-date">Created by <%= User.find(group.user_id).name %></p>
             <p class="group-date"><%= group.created_at.strftime("%d %b %Y") %></p>
           </div>
-          <%= link_to edit_group_path(group.id) do %>
-            <i class="fas fa-pen edit-group-icon"></i>
-          <% end %>
+          <%= show_edit_del_btns(group) %>
         </div>
       </div>
     <% end %>

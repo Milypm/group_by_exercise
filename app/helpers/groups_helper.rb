@@ -11,7 +11,9 @@ module GroupsHelper
     render 'gexercises_noempty'
   end
 
-  def author(exercise)
-    User.find_by(id: Exercise.find_by(id: exercise.id).user_id).name
+  def show_edit_del_btns(group)
+    return unless current_user.id == group.user_id
+
+    render 'groups/edit_delete_btns'
   end
 end

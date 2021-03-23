@@ -25,7 +25,7 @@ class ApplicationController < ActionController::Base
 
   def exercise_group_time
     @time_counter = 0
-    Exercise.with_group.each do |e|
+    @exercises_w_group.each do |e|
       @time_counter += e.time
     end
     get_hours_mins
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   def exercise_nogroup_time
     @time_counter = 0
-    Exercise.without_group.each do |e|
+    @exercises_no_group.each do |e|
       @time_counter += e.time
     end
     get_hours_mins

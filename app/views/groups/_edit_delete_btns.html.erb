@@ -1,0 +1,6 @@
+<%= link_to edit_group_path(group.id) do %>
+  <i class="fas fa-pen edit-group-icon"></i>
+<% end %>
+<%= link_to exercise_path(exercise.id), method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <i class="far fa-trash-alt"></i>
+<% end %>

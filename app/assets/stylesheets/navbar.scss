@@ -1,9 +1,10 @@
 .navbar-container {
   background: #3778c2;
+  font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   width: 100%;
-  max-width: 768px;
+  max-width: auto;
   top: 0;
-  height: 60px;
+  height: 70px;
   z-index: 1;
   display: flex;
   position: fixed;
@@ -11,7 +12,7 @@
 .nav-left-container,
 .nav-middle-container,
 .nav-right-container {
-  height: 60px;
+  height: 100%;
   display: flex;
   align-items: center;
 }
@@ -23,6 +24,7 @@
 }
 .nav-right-container{
   justify-content: flex-end;
+  align-items: center;
 }
 .navbar-notlogged {
   background: #3778c2;
@@ -70,14 +72,16 @@
   opacity: .8;
 }
 .nav-title {
-  margin: auto 0;
+  margin: auto;
+  padding: 0;
   font-size: 15px;
   display: flex;
   text-align: center;
+  font-stretch: extra-expanded;
   color: #fff;
 }
 .nav-logout-btn a {
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 15px;
   text-decoration: none;
   color: #fff;
@@ -87,6 +91,7 @@
 }
 /********* GENERAL DROPDOWN *********/
 .dropbtn {
+  font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   display: inline-block;
   color: white;
   text-align: center;
@@ -96,12 +101,14 @@
   border: none;
 }
 .dropbtn i {
+  margin-top: 15px;
   font-size: 20px;
 }
 .dropdown {
   display: inline-block;
 }
 .dropdown-content {
+  font-size: 15px;
   top: 56px;
   left: -10px;
   display: none;
@@ -110,6 +117,9 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 .dropdown-content a {
   color: black;
@@ -122,22 +132,18 @@
   background-color: #f1f1f1;
   color: #000;
 }
-.dropdown:hover .dropdown-content {
-  display: block;
-}
 /********* DROPDOWN FOR PROFILE *********/
 .profile-dropdown {
   margin-top: 15px;
 }
 .profile-dropdown .dropdown-content {
-  font-size: 17px;
   margin-left: 25px;
 }
 /********* DROPDOWN FOR EXERCISES *********/
-.myexercises-dropdpwn .dropdown-content {
+.myexercises-dropdown .dropdown-content {
   margin-left: 25px;
 }
-.myexercises-dropdpwn .dropbtn i {
+.myexercises-dropdown .dropbtn i {
   margin-top: 10px;
 }
 /********* DROPDOWN FOR GROUPS *********/
