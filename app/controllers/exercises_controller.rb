@@ -3,11 +3,11 @@ class ExercisesController < ApplicationController
 
 
   def index
-    @exercises_w_group = current_user.exercises.with_group.most_recent
+    @exercises_w_group = current_user.exercises.includes(:group).with_group.most_recent
   end
 
   def index_nogroup
-    @exercises_no_group = current_user.exercises.without_group.most_recent
+    @exercises_no_group = current_user.exercises.includes(:group).without_group.most_recent
   end
 
   def show
