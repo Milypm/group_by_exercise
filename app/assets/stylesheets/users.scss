@@ -4,22 +4,26 @@
 body {
   background: #e8eef4;
 }
+
 .new-session-name {
   width: 100%;
   height: 50px;
   padding: 12.5px 0 12.5px 10px;
 }
+
 .form-image-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 15px;
 }
+
 .browse-img {
   font-size: 13px;
   width: 250px;
   margin-top: -15px;
 }
+
 .profile-container {
   font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   position: absolute;
@@ -30,6 +34,7 @@ body {
   font-size: 18px;
   padding-bottom: 100px;
 }
+
 .profile-name {
   display: flex;
   flex-direction: column;
@@ -39,6 +44,7 @@ body {
   height: 100px;
   width: 100px;
 }
+
 .profile-name img {
   width: 120px;
   height: 120px;
@@ -46,6 +52,7 @@ body {
   border-radius: 50%;
   margin-bottom: 10px;
 }
+
 .profile-settings {
   height: 150px;
   width: 300px;
@@ -54,19 +61,23 @@ body {
   justify-content: space-between;
   margin: 100px auto 0 auto;
 }
+
 .profile-setting-item {
   display: flex;
   align-items: flex-start;
 }
+
 .profile-setting-item:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
+
 .profile-setting-item i {
   font-size: 18px;
   padding: 5px 6px;
   border: 1px solid #fff;
   border-radius: 50%;
 }
+
 .profile-settings p {
   margin-left: 15px;
   width: 230px;
@@ -74,11 +85,13 @@ body {
   padding-bottom: 18px;
   margin-bottom: 18px;
 }
+
 .delete-user {
   display: flex;
   justify-content: center;
   margin-top: 100px;
 }
+
 .delete-userbtn {
   font-size: 15px;
   padding: 5px;
@@ -89,6 +102,7 @@ body {
   background: #fff;
   color: rgb(209, 98, 98);
 }
+
 .delete-userbtn:hover {
   color: #fff;
   background: rgb(199, 97, 97);
