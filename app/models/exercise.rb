@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class Exercise < ApplicationRecord
   validates :name, presence: true
   validates :time, presence: true
-  
+
   belongs_to :user
   belongs_to :group, optional: true
   has_many :groups

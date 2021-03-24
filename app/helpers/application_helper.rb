@@ -1,14 +1,16 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   def root_page
     if logged_in?
-      render 'users/profile' 
+      render 'users/profile'
     else
       render 'home/not_logged'
     end
   end
 
   def alerts
-    render 'layouts/alerts' if notice
+    render 'layouts/alerts' if notice && !current_page?(login_path)
   end
 
   def dropdown_one
@@ -42,7 +44,7 @@ module ApplicationHelper
   def dropdown_four
     link_to 'Log Out', logout_path, method: :post if current_page?(groups_path)
 
-    return
+    nil
   end
 
   def nav_notlogged_title
@@ -79,7 +81,7 @@ module ApplicationHelper
     elsif params[:controller] == 'exercises' && params[:action] == 'edit'
       'EDIT EXERCISE'
     elsif params[:controller] == 'groups' && params[:action] == 'show'
-      "#{@group.name.upcase}"
+      @group.name.upcase.to_s
     elsif params[:controller] == 'groups' && params[:action] == 'edit'
       'EDIT GROUP'
     else
@@ -94,10 +96,10 @@ module ApplicationHelper
       link_to 'Log Out', logout_path, method: :post
     end
   end
-  
+
   def get_icon_exercise(exercise)
-    return unless exercise.group_id != nil
-    
+    return if exercise.group_id.nil?
+
     group_icon = Group.find_by(id: exercise.group_id).icon
     raw(group_icon)
   end

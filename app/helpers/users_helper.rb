@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module UsersHelper
   def user_avatar(current_user)
     user = User.find(current_user.id)
     if user.user_image.attached?
-        image_tag user.user_image
+      image_tag user.user_image
     else
-        image_tag 'default_user_image.jpg'
+      image_tag 'default_user_image.jpg'
     end
   end
 

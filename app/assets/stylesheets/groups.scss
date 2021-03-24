@@ -17,6 +17,27 @@
   position: relative;
   top: -30px;
 }
+.container-scroll {
+  position: relative;
+  top: 10px;
+  bottom: 200px;
+  overflow: scroll;
+  height: 550px;
+}
+.allgroups-logout {
+  position: relative;
+  width: 70px;
+  left: 270px;
+  top: -40px;
+}
+.allgroups-logout a {
+  color: #fff;
+  font-size: 15px;
+}
+.allgroups-logout a:hover {
+  color: #000;
+  opacity: .8;
+}
 .group_add_new {
   width: 100%;
   height: 90px;
@@ -45,7 +66,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 15px auto;
+  margin: 0 auto;
   font-size: 20px;
 }
 .group-setting-item {

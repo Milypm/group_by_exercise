@@ -1,21 +1,23 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class ExercisesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @exercise = exercises(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get exercises_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_exercise_url
     assert_response :success
   end
 
-  test "should create exercise" do
+  test 'should create exercise' do
     assert_difference('Exercise.count') do
       post exercises_url, params: { exercise: { group_id: @exercise.group_id, name: @exercise.name, time: @exercise.time, user_id: @exercise.user_id } }
     end
@@ -23,22 +25,22 @@ class ExercisesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to exercise_url(Exercise.last)
   end
 
-  test "should show exercise" do
+  test 'should show exercise' do
     get exercise_url(@exercise)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_exercise_url(@exercise)
     assert_response :success
   end
 
-  test "should update exercise" do
+  test 'should update exercise' do
     patch exercise_url(@exercise), params: { exercise: { group_id: @exercise.group_id, name: @exercise.name, time: @exercise.time, user_id: @exercise.user_id } }
     assert_redirected_to exercise_url(@exercise)
   end
 
-  test "should destroy exercise" do
+  test 'should destroy exercise' do
     assert_difference('Exercise.count', -1) do
       delete exercise_url(@exercise)
     end
