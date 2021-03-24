@@ -12,11 +12,13 @@
   display: flex;
   flex-direction: column;
 }
+
 .no-groups {
   font-size: 40px;
   position: relative;
   top: -30px;
 }
+
 .container-scroll {
   position: relative;
   top: 10px;
@@ -24,20 +26,24 @@
   overflow: scroll;
   height: 550px;
 }
+
 .allgroups-logout {
   position: relative;
   width: 70px;
   left: 270px;
   top: -40px;
 }
+
 .allgroups-logout a {
   color: #fff;
   font-size: 15px;
 }
+
 .allgroups-logout a:hover {
   color: #000;
-  opacity: .8;
+  opacity: 0.8;
 }
+
 .group_add_new {
   width: 100%;
   height: 90px;
@@ -48,6 +54,7 @@
   position: fixed;
   bottom: 0;
 }
+
 .group_new_btn {
   width: 90%;
   border: 2px solid #5fb523;
@@ -57,10 +64,12 @@
   justify-content: center;
   align-items: center;
 }
+
 .group_new_btn:hover {
   background: #72b841;
   color: #fff;
 }
+
 .group-settings {
   width: 300px;
   display: flex;
@@ -69,40 +78,49 @@
   margin: 0 auto;
   font-size: 20px;
 }
+
 .group-setting-item {
   display: flex;
   margin-bottom: 18px;
   align-items: flex-start;
 }
+
 .group-setting-item:hover {
-  opacity: .8;
+  opacity: 0.8;
 }
+
 .allgroups_icon {
   display: flex;
   align-items: center;
   margin-top: 15px;
 }
+
 .allgroups_icon i {
   border: 2px solid #fff;
   border-radius: 50%;
 }
+
 .fa-running,
 .fa-walking {
   font-size: 25px;
   padding: 9px 13px;
 }
+
 .fa-biking {
   font-size: 20.5px;
   padding: 11px 9px;
 }
+
 .fa-skating {
   font-size: 22px;
   padding: 11px 13px;
 }
+
 .fa-dumbbell {
   font-size: 21px;
   padding: 11px 10px;
 }
+
 .group-name_date {
   width: 70%;
   margin-top: 5px;
@@ -111,35 +129,44 @@
   justify-content: space-between;
   border-bottom: 1px solid #fff;
 }
+
+.group-editdel-btns i {
+  color: #fff;
+}
+
 .group-name_date i:hover {
   color: #3778c2;
 }
+
 .g_exitem-icon-name-author {
   font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   width: 70%;
 }
+
 .group-name {
   font-size: 20px;
 }
+
 .group-date {
   font-size: 12px;
   margin-top: -13px;
 }
+
 .edit-group-icon {
   color: #fff;
   font-size: 15px;
 }
+
 .group-editdel-btns {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.group-editdel-btns i {
-  color: #fff;
-}
+
 .group-editdel-btns .fa-trash-alt {
   margin-top: 15px;
 }
+
 .group-icons-field {
   width: 50%;
   height: 50px;

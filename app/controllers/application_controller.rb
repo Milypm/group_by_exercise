@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ApplicationController < ActionController::Base
   helper_method :current_user
   helper_method :logged_in?
@@ -29,7 +27,7 @@ class ApplicationController < ActionController::Base
     @exercises_w_group.each do |e|
       @time_counter += e.time
     end
-    get_hours_mins
+    hours_mins
   end
 
   def exercise_nogroup_time
@@ -37,7 +35,7 @@ class ApplicationController < ActionController::Base
     @exercises_no_group.each do |e|
       @time_counter += e.time
     end
-    get_hours_mins
+    hours_mins
   end
 
   def group_exercises_time
@@ -45,12 +43,12 @@ class ApplicationController < ActionController::Base
     @group_exercises.each do |e|
       @time_counter += e.time
     end
-    get_hours_mins
+    hours_mins
   end
 
   private
 
-  def get_hours_mins
+  def hours_mins
     if @time_counter > 60
       hours = (@time_counter / 60).floor
       minutes = @time_counter % 60

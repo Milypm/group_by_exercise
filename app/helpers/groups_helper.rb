@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module GroupsHelper
   def check_groupindex_empty
     if @groups.empty?

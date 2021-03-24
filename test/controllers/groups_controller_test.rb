@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class GroupsControllerTest < ActionDispatch::IntegrationTest
@@ -19,7 +17,11 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create group' do
     assert_difference('Group.count') do
-      post groups_url, params: { group: { exercise_id: @group.exercise_id, icon: @group.icon, name: @group.name, user_id: @group.user_id } }
+      post groups_url, params: { group: { exercise_id: @group.exercise_id,
+                                          icon: @group.icon,
+                                          name: @group.name,
+                                          user_id: @group.user_id }
+                                        }
     end
 
     assert_redirected_to group_url(Group.last)
@@ -36,7 +38,11 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update group' do
-    patch group_url(@group), params: { group: { exercise_id: @group.exercise_id, icon: @group.icon, name: @group.name, user_id: @group.user_id } }
+    patch group_url(@group), params: { group: { exercise_id: @group.exercise_id,
+                                                icon: @group.icon,
+                                                name: @group.name,
+                                                user_id: @group.user_id }
+                                              }
     assert_redirected_to group_url(@group)
   end
 

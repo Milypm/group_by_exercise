@@ -17,7 +17,7 @@
 - Groups are categories to organize the exercises.
 - Exercises can be created with or without a group.
 - A user can only see their created exercises.
-- Exercises views show the total time spent doing exercises (with or wihout group).
+- Exercises views show the total time spent doing exercises (with or wihout a group).
 - A user can edit or delete her/his own account, and her/his own exercises/groups.
 
 ## Built With

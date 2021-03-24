@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module UsersHelper
   def user_avatar(current_user)
     user = User.find(current_user.id)

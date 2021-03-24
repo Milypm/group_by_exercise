@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'test_helper'
 
 class ExercisesControllerTest < ActionDispatch::IntegrationTest
@@ -19,7 +17,12 @@ class ExercisesControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create exercise' do
     assert_difference('Exercise.count') do
-      post exercises_url, params: { exercise: { group_id: @exercise.group_id, name: @exercise.name, time: @exercise.time, user_id: @exercise.user_id } }
+      post exercises_url, params: { exercise: {
+                                    group_id: @exercise.group_id,
+                                    name: @exercise.name,
+                                    time: @exercise.time,
+                                    user_id: @exercise.user_id }
+                                  }
     end
 
     assert_redirected_to exercise_url(Exercise.last)
@@ -36,7 +39,12 @@ class ExercisesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should update exercise' do
-    patch exercise_url(@exercise), params: { exercise: { group_id: @exercise.group_id, name: @exercise.name, time: @exercise.time, user_id: @exercise.user_id } }
+    patch exercise_url(@exercise), params: { exercise: {
+                                              group_id: @exercise.group_id,
+                                              name: @exercise.name,
+                                              time: @exercise.time,
+                                              user_id: @exercise.user_id }
+                                            }
     assert_redirected_to exercise_url(@exercise)
   end
 

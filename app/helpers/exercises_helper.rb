@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module ExercisesHelper
   def check_index_empty
     if @exercises_w_group.empty?

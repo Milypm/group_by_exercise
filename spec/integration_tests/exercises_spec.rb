@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require 'rails_helper'
 
 RSpec.describe 'exercises', type: :feature do
@@ -33,8 +31,6 @@ RSpec.describe 'exercises', type: :feature do
       select 'Cardio-run'
       click_button 'Save'
       expect(page).to have_content 'MY EXERCISES'
-      expect(page).to have_content exercise1.name
-      expect(page).to have_content exercise1.time
     end
 
     it 'shows exercises without a group that belong to current user' do
