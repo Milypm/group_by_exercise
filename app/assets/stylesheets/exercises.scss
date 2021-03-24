@@ -132,9 +132,13 @@ body {
   justify-content: space-between;
   height: 56px;
 }
-.fa-trash-alt {
+.exercise_item_icons .fa-pen {
+  color: #3778c2;
+}
+.exercise_item_icons .fa-trash-alt {
   color: red;
 }
+.exercise_item_icons .fa-pen:hover,
 .fa-trash-alt:hover {
   color: #000;
 }

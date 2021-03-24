@@ -9,7 +9,16 @@
             <p class="group-date">Created by <%= User.find(group.user_id).name %></p>
             <p class="group-date"><%= group.created_at.strftime("%d %b %Y") %></p>
           </div>
-          <%= show_edit_del_btns(group) %>
+          <div class="group-editdel-btns">
+            <% if current_user.id == group.user_id %>
+              <%= link_to edit_group_path(group.id) do %>
+                <i class="fas fa-pen edit-group-icon"></i>
+              <% end %>
+              <%= link_to group_path(group.id), method: :delete, data: { confirm: 'Delete this group?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     <% end %>

@@ -1,19 +1,21 @@
 module GroupsHelper
   def check_groupindex_empty
-    render 'empty' if @groups.nil?
-
+    if @groups.empty?
+      render 'empty'
+    else
     render 'group_noempty'
+    end
   end
   
   def check_gexercises_empty
-    render 'empty' if @group_exercises.nil?
-
-    render 'gexercises_noempty'
+    if @group_exercises.empty?
+      render 'empty' 
+    else
+      render 'gexercises_noempty'
+    end
   end
-
-  def show_edit_del_btns(group)
-    return unless current_user.id == group.user_id
-
-    render 'groups/edit_delete_btns'
+  
+  def author(exercise)
+    User.find_by(id: Exercise.find_by(id: exercise.id).user_id).name
   end
 end

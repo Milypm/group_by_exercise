@@ -108,6 +108,17 @@
   color: #fff;
   font-size: 15px;
 }
+.group-editdel-btns {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.group-editdel-btns i {
+  color: #fff;
+}
+.group-editdel-btns .fa-trash-alt {
+  margin-top: 15px;
+}
 .group-icons-field {
   width: 50%;
   height: 50px;

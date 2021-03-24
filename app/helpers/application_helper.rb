@@ -55,17 +55,7 @@ module ApplicationHelper
 
   def nav_check_icon
     if logged_in?
-      if current_page?(new_exercise_path) || current_page?(new_group_path)
-        link_to exercises_path do
-          raw("<i class='fas fa-arrow-left'></i>")
-        end
-      elsif params[:action] == 'edit' || params[:controller] == 'groups' && params[:action] == 'show'
-        link_to exercises_path do
-          raw("<i class='fas fa-arrow-left'></i>")
-        end
-      else
-        render 'exercises/header_dropdown'
-      end
+      left_icon_logged
     else
       link_to root_path do
         raw("<i class='fas fa-arrow-left'></i>")
@@ -120,5 +110,33 @@ module ApplicationHelper
       'Strenght-tone-up' => raw("<i class='fas fa-dumbbell'></i>"),
       'Flexibility' => raw("<i class='fas fa-skating'></i>")
     }
+  end
+
+  private
+
+  def left_icon_logged
+    if current_page?(new_exercise_path) || params[:controller] == 'exercises' && params[:action] == 'edit'
+      link_to exercises_path do
+        navbar_arrow
+      end
+    elsif current_page?(new_group_path) || params[:controller] == 'groups' && params[:action] == 'edit'
+      link_to groups_path do
+        navbar_arrow
+      end
+    elsif params[:controller] == 'users' && params[:action] == 'edit'
+      link_to root_path do
+        navbar_arrow
+      end
+    elsif params[:controller] == 'groups' && params[:action] == 'show'
+      link_to groups_path do
+        navbar_arrow
+      end
+    else
+      render 'exercises/header_dropdown'
+    end
+  end
+
+  def navbar_arrow
+    raw("<i class='fas fa-arrow-left'></i>")
   end
 end

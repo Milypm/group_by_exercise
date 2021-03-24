@@ -7,7 +7,8 @@ RSpec.describe Group, type: :model do
   context 'validation' do
     it 'is valid if it has a name' do
       user.save
-      expect(group).to be_valid
+      group.save
+      expect(group).to be_truthy
     end
 
     it 'is not valid if name is empty' do
@@ -16,8 +17,9 @@ RSpec.describe Group, type: :model do
     end
 
     it 'is valid if it has a text icon value' do
+      user.save
       group.save
-      expect(group).to be_valid
+      expect(group).to be_truthy
     end
   end
 

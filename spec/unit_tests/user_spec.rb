@@ -24,7 +24,7 @@ RSpec.describe User, type: :model do
     end
 
     it 'has one attached user image' do
-      has_one(:user_image)
+      have_one(:user_image)
     end
   end
 end

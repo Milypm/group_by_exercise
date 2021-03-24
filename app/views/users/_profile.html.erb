@@ -24,4 +24,7 @@
       </div>
     <% end %>
   </div>
+  <div class="delete-user">
+    <%= link_to 'Delete User', user_path(current_user.id), method: :delete, data: { confirm: 'Delete this account?' }, class: 'delete-userbtn' %>
+  </div>
 </div>

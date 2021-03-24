@@ -7,20 +7,21 @@ RSpec.describe Exercise, type: :model do
   context 'validation' do
     it 'is valid if it has a name' do
       user.save
-      expect(exercise).to be_valid
+      expect(exercise).to be_truthy
     end
 
     it 'is not valid if name is empty' do
-      exercise.name = nil
+      exercise.name = ''
       expect(exercise).to_not be_valid
     end
 
     it 'is valid if it has an integer value' do
+      user.save
       exercise.save
-      expect(exercise).to be_valid
+      expect(exercise).to be_truthy
     end
 
-    it 'is not valid if time is not an integer'
+    it 'is not valid if time is not an integer' do
       exercise.time = 'forty-five minutes'
       expect(exercise).to_not be_valid
     end

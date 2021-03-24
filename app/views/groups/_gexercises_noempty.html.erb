@@ -18,7 +18,16 @@
         <p class="exercise-time">
           <span><%= g_exercise.time %><br>min.</span>
         </p>
-        <%= show_edit_del_btns(g_exercise) %>
+        <div class="exercise_item_icons">
+          <% if current_user.id == g_exercise.user_id %>
+            <%= link_to edit_exercise_path(g_exercise.id) do %>
+              <i class="fas fa-pen"></i>
+            <% end %>
+            <%= link_to exercise_path(g_exercise.id), method: :delete, data: { confirm: 'Delete this exercise?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
   <% end %>
