@@ -21,10 +21,10 @@ class ExercisesController < ApplicationController
   end
 
   def create
-    @exercise = current_user.exercises.create(exercise_params)
+    exercise = current_user.exercises.create(exercise_params)
     respond_to do |format|
-      if @exercise.save
-        if @exercise.group_id.nil?
+      if exercise.save
+        if exercise.group_id.nil?
           format.html { redirect_to external_exercises_path, notice: "Exercise was successfully created." }
         else
           format.html { redirect_to exercises_path, notice: "Exercise was successfully created." }

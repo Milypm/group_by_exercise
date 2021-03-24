@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :exercise_group_time
   helper_method :exercise_nogroup_time
   helper_method :group_exercises_time
-  # helper_method :generate_avatar
 
   def log_in(user)
     session[:user_id] = user.id
@@ -46,11 +45,6 @@ class ApplicationController < ActionController::Base
     end
     get_hours_mins
   end
-
-  # def generate_avatar
-  #   random_n = rand(1..4)
-  #   helpers.avatar_images.select { |k, v| k == random_n}
-  # end
 
   private
 

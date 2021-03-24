@@ -98,7 +98,7 @@ module ApplicationHelper
   def get_icon_exercise(exercise)
     return unless exercise.group_id != nil
     
-    group_icon = Group.find_by(id: exercise.group_id, user_id: exercise.user_id).icon
+    group_icon = Group.find_by(id: exercise.group_id).icon
     raw(group_icon)
   end
 

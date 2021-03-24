@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe 'groups', type: :feature do
-  let(:user1) { User.create(name: 'Mark', id: 1) }
-  let(:user2) { User.create(name: 'Shane', id: 2) }
+  let(:user1) { User.create(name: 'Jane', id: 1) }
+  let(:user2) { User.create(name: 'Mike', id: 2) }
   let(:exercise1) { Exercise.new(name: 'Running 5km', time: 45, user_id: 1, group_id: 1) }
   let(:exercise2) { Exercise.create(name: 'Yoga', time: 50, user_id: 2) }
   let(:exercise3) { Exercise.create(name: 'Play football', time: 95, user_id: 2) }
