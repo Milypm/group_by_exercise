@@ -13,3 +13,34 @@
  *= require_tree .
  *= require_self
  */
+
+/*
+*= require font-awesome
+*/
+@font-face {
+  font-family: 'faster-one';
+  src: url('FasterOne-Regular.ttf');
+  font-family: 'proxima-nova-light';
+  src: url('proxima-nova-light.woff');
+  font-family: 'proxima-nova-bold';
+  src: url('proxima-nova-bold.woff');
+  font-family: 'sonsie';
+  src: url('SonsieOne-Regular.ttf');
+}
+
+@media (min-width: 100px) and (max-width: 768px) {
+  body {
+    background: #e8eef4;
+    height: max-content;
+  }
+
+  a,
+  a:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .alert {
+    z-index: 2;
+  }
+}

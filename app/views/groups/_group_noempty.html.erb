@@ -1,0 +1,26 @@
+<div class="group-settings">
+  <% @groups.each do |group| %>
+    <%= link_to group_path(group.id), class: 'text-light text-decoration-none' do %>
+      <div class="group-setting-item">
+        <div class="allgroups_icon"><%= raw(group.icon) %></div>
+        <div class="group-name_date">
+          <div class="d-flex flex-column">
+            <p class="group-name"><%= group.name %></p>
+            <p class="group-date">Created by <%= User.find(group.user_id).name %></p>
+            <p class="group-date"><%= group.created_at.strftime("%d %b %Y") %></p>
+          </div>
+          <div class="group-editdel-btns">
+            <% if current_user.id == group.user_id %>
+              <%= link_to edit_group_path(group.id) do %>
+                <i class="fas fa-pen edit-group-icon"></i>
+              <% end %>
+              <%= link_to group_path(group.id), method: :delete, data: { confirm: 'Delete this group?' } do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

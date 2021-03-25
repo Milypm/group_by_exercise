@@ -1,0 +1,109 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+body {
+  background: #e8eef4;
+}
+
+.new-session-name {
+  width: 100%;
+  height: 50px;
+  padding: 12.5px 0 12.5px 10px;
+}
+
+.form-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.browse-img {
+  font-size: 13px;
+  width: 250px;
+  margin-top: -15px;
+}
+
+.profile-container {
+  font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: linear-gradient(#0d407a, #1d5a9f, #3778c2, #84a4c7);
+  color: #fff;
+  font-size: 18px;
+  padding-bottom: 100px;
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  height: 100px;
+  width: 100px;
+}
+
+.profile-name img {
+  width: 120px;
+  height: 120px;
+  padding: 0;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-settings {
+  height: 150px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 100px auto 0 auto;
+}
+
+.profile-setting-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.profile-setting-item:hover {
+  opacity: 0.8;
+}
+
+.profile-setting-item i {
+  font-size: 18px;
+  padding: 5px 6px;
+  border: 1px solid #fff;
+  border-radius: 50%;
+}
+
+.profile-settings p {
+  margin-left: 15px;
+  width: 230px;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+}
+
+.delete-user {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.delete-userbtn {
+  font-size: 15px;
+  padding: 5px;
+  width: 40%;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: bold;
+  background: #fff;
+  color: rgb(209, 98, 98);
+}
+
+.delete-userbtn:hover {
+  color: #fff;
+  background: rgb(199, 97, 97);
+}
