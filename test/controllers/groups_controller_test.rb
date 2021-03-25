@@ -20,9 +20,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
       post groups_url, params: { group: { exercise_id: @group.exercise_id,
                                           icon: @group.icon,
                                           name: @group.name,
-                                          user_id: @group.user_id
-                                        }
-                                }
+                                          user_id: @group.user_id } }
     end
 
     assert_redirected_to group_url(Group.last)
@@ -42,9 +40,7 @@ class GroupsControllerTest < ActionDispatch::IntegrationTest
     patch group_url(@group), params: { group: { exercise_id: @group.exercise_id,
                                                 icon: @group.icon,
                                                 name: @group.name,
-                                                user_id: @group.user_id
-                                              }
-                                      }
+                                                user_id: @group.user_id } }
     assert_redirected_to group_url(@group)
   end
 

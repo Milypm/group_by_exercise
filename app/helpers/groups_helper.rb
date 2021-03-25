@@ -1,7 +1,7 @@
 module GroupsHelper
   def check_groupindex_empty
     if @groups.empty?
-      render 'empty'
+      render 'exercises/empty'
     else
       render 'group_noempty'
     end
@@ -9,7 +9,7 @@ module GroupsHelper
 
   def check_gexercises_empty
     if @group_exercises.empty?
-      render 'empty'
+      render 'exercises/empty'
     else
       render 'gexercises_noempty'
     end
