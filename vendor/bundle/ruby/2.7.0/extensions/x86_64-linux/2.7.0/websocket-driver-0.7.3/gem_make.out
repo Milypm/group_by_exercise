@@ -1,0 +1,15 @@
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+/home/mily/.rbenv/versions/2.7.0/bin/ruby -I /home/mily/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20210325-21109-qavmj.rb extconf.rb
+creating Makefile
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/websocket-driver-0.7.3/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20210325-21109-12gtvr2

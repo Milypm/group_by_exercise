@@ -1,0 +1,15 @@
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+/home/mily/.rbenv/versions/2.7.0/bin/ruby -I /home/mily/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20210325-21109-gzvnuq.rb extconf.rb
+creating Makefile
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" clean
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR="
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.so
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/bootsnap-1.7.3/ext/bootsnap
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bootsnap.so ./.gem.20210325-21109-ul6k2d/bootsnap

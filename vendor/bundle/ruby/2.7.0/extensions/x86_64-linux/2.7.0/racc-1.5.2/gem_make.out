@@ -1,0 +1,16 @@
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+/home/mily/.rbenv/versions/2.7.0/bin/ruby -I /home/mily/.rbenv/versions/2.7.0/lib/ruby/2.7.0 -r ./siteconf20210325-21109-1jjg3ty.rb extconf.rb
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/mily/Desktop/Microverse-Projects/RoR Module/capstone-cloned-github/clone-march25/group_by_exercise/vendor/bundle/ruby/2.7.0/gems/racc-1.5.2/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20210325-21109-znhzud/racc
