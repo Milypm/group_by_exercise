@@ -20,8 +20,14 @@
 - Exercises views show the total time spent doing exercises (with or wihout a group).
 - A user can edit or delete her/his own account, and her/his own exercises/groups.
 
+## Live Project
+You can visit the live project here: [heroku-group-by-exercise](https://afternoon-taiga-35378.herokuapp.com/)
+
+## Project presentation
+View a short video presentation I did for this projeect here: [group-by-exercise-video](https://www.loom.com/share/9cf03764809045adb8764b40dad65153)
+
 ## Built With
-- Ruby (v. 2.7.2)
+- Ruby (v. 2.7.0)
 - Ruby on Rails (v. 6.1.1)
 - HTML / CSS
 - Bootstrap
