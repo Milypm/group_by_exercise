@@ -1,0 +1,12 @@
+<div>
+  <div class="allgroups-container">
+    <div class="container-scroll">
+      <div class="allgroups-dropdown"><%= nav_check_icon %></div>
+      <div class="allgroups-logout"><%= link_to 'Log Out', logout_path, method: :post%></div>
+      <%= check_groupindex_empty %>
+    </div>
+  </div>
+  <div class="group_add_new">
+    <%= link_to "ADD NEW GROUP", new_group_path, class: 'group_new_btn text-decoration-none' %>
+  </div>
+</div>

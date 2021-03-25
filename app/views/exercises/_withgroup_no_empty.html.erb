@@ -1,0 +1,32 @@
+<div class="d-flex flex-column">
+  <div class="totaltime">
+    <p class="m-0">Total time</p>
+    <span class="m-0"><%= exercise_group_time %></span>
+  </div>
+  <div class="exercises-list">
+    <% @exercises_w_group.each do |exercise| %>
+      <div class="exercise-item">
+        <div class="ex-item">
+          <div class="exitem-icon-name">
+            <span class="exitem-icon"><%= get_icon_exercise(exercise) %></span>
+            <div class="exercise-name-date">
+              <p><%= exercise.name %></p>
+              <span><%= exercise.created_at.strftime("%d %b %Y") %></span>
+            </div>
+          </div>
+          <p class="exercise-time">
+            <span><%= exercise.time %><br>min</span>
+          </p>
+          <div class="exercise_item_icons">
+            <%= link_to edit_exercise_path(exercise.id) do %>
+              <i class="fas fa-pen"></i>
+            <% end %>
+            <%= link_to exercise_path(exercise.id), method: :delete, data: { confirm: 'Do you want to delete this exercise?' } do %>
+              <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
