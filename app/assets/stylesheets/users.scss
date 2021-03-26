@@ -46,10 +46,15 @@ body {
 }
 
 .profile-name img {
+  background: #fff;
   width: 120px;
   height: 120px;
   padding: 0;
   border-radius: 50%;
+  overflow: hidden;
+  display: block;
+  min-width: 100%;
+  min-height: 100%;
   margin-bottom: 10px;
 }
 

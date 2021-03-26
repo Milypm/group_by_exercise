@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   root 'home#index'
 
@@ -12,5 +10,4 @@ Rails.application.routes.draw do
   post 'logout', to: 'sessions#destroy'
 
   get 'external_exercises', to: 'exercises#index_nogroup'
-  # get 'group_exercises', to: 'groups#index_groupexercises'
 end

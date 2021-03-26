@@ -36,15 +36,15 @@ View a short video presentation I did for this projeect here: [group-by-exercise
 - Git
  
 ## How to run it
-* It's recommended to use Git's latest version.
-* Clone or download the repo from here [group-by-exercise](https://github.com/Milypm/group_by_exercise) on your local system.
-- Click on the "Code" green button and copy HTTPS URL.
-- Go to your local system, on an empty folder, to clone the repo: "git clone 'HTTPS URL'".
-- Go to the repo root directory.
-- Install the dependencies with: 'bundle install'.
-- Migrate the database with: 'rails db:migrate'.
-- Start the server: 'rails server' or 'rails s'.
-- Copy/open the path given to open the project in the browser: 'http://localhost:3000/'.
+- It's recommended to use Git's latest version.
+- Clone or download the repo: [group-by-exercise](https://github.com/Milypm/group_by_exercise) to your local system.
+    - Click on the "Code" green button and copy 'HTTPS URL'.
+    - **On an empty folder** on your local system, open the command-line: `git clone 'HTTPS URL'`
+- Go to the repo root directory (group-by-exercise).
+- Install the dependencies with: `bundle install`
+- Migrate the database with: `rails db:migrate`
+- Start the server: `rails server'` or `rails s`
+- Open the project in the browser: `http://localhost:3000/`
 
 ## Testing with RSpec / Capybara
 - On the command line, go to the application's root directory, and type: 'rspec'.
@@ -64,4 +64,4 @@ Visit [issues' section](https://github.com/Milypm/group_by_exercise/issues)
 Give a :star2: if you like this project!
 
 ## License
-<p>This project is <a href="../feature/LICENSE">MIT</a> licensed.</p>
+This project is [MIT](https://github.com/Milypm/group_by_exercise/blob/development/LICENSE)

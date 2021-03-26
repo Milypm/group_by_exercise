@@ -1,13 +1,13 @@
-<div class="d-flex flex-column">
-  <div class="totaltime">
-    <p class="m-0">Total time</p>
-    <span class="m-0"><%= exercise_nogroup_time %></span>
-  </div>
-  <div class="exercises-list">
-    <% @exercises_no_group.each do |exercise| %>
-      <div class="exercise-item">
+<div class="totaltime">
+  <p class="m-0">Total time</p>
+  <span class="m-0"><%= exercise_nogroup_time %></span>
+</div>
+<div class="exercises-list">
+  <% @exercises_no_group.each do |exercise| %>
+    <div class="exercise-item">
       <div class="ex-item">
         <div class="exitem-icon-name">
+          <span class="exitem-alerticon"><i class="fas fa-exclamation-triangle"></i></span>
           <div class="exercise-name-date">
             <p><%= exercise.name %></p>
             <span><%= exercise.created_at.strftime("%d %b %Y") %></span>
@@ -24,8 +24,7 @@
             <i class="far fa-trash-alt"></i>
           <% end %>
         </div>
-        </div>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
 </div>

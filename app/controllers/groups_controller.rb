@@ -7,7 +7,7 @@ class GroupsController < ApplicationController
   end
 
   def show
-    @group_exercises = current_user.exercises.includes(:group).select { |e| e.group_id == @group.id }
+    @group_exercises = current_user.exercises.includes(:group).most_recent.select { |e| e.group_id == @group.id }
   end
 
   def new

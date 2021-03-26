@@ -3,8 +3,10 @@ module NavbarleftHelper
     if logged_in?
       left_icon_logged
     else
-      link_to url_for(:back) do
-        raw("<i class='fas fa-arrow-left'></i>")
+      if current_page?(login_path) || current_page?(new_user_path)
+        link_to root_path do
+          raw("<i class='fas fa-arrow-left'></i>")
+        end
       end
     end
   end

@@ -9,11 +9,13 @@
   font-family: 'proxima-nova-light', 'Segoe UI', Tahoma, Verdana, sans-serif;
   position: absolute;
   width: 100%;
-  top: 60px;
-  height: 100%;
+  top: 70px;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  bottom: 85px;
+  overflow: scroll;
 }
 
 .myg_exercises-container {
@@ -90,11 +92,22 @@
   margin-right: 0;
 }
 
+.exitem-icon i,
+.exitem-alerticon i {
+  border-radius: 8px;
+  font-size: 25px;
+  color: #fff;
+}
+
 .exitem-icon i {
   font-size: 34px;
   color: #fff;
   background: #5fb523;
   border-radius: 8px;
+}
+
+.exitem-alerticon i {
+  background: rgb(230, 230, 61);
 }
 
 .exitem-icon .fa-dumbbell {
@@ -170,13 +183,13 @@
 }
 
 .exercise_add_new {
+  position: fixed;
   width: 100%;
   height: 90px;
   background: #5fb523;
   display: flex;
   justify-content: center;
   padding: 15px 0;
-  position: fixed;
   bottom: 0;
 }
 

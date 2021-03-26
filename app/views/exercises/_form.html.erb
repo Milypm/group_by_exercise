@@ -2,17 +2,7 @@
   <%= form_with(model: exercise) do |form| %>
     <%= render 'layouts/navbar' %>
     <%= form.submit 'Save', class: 'nav-login-btn savebtn-exercise-edit' %>
-    <% if exercise.errors.any? %>
-      <div id="error_explanation">
-        <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
-  
-        <ul>
-          <% exercise.errors.each do |error| %>
-            <li><%= error.full_message %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    <%= forms_exercisesgroups_error(exercise) %>
   
     <div class="edit-container">
       <div class="field between-navbar-form" style="width: 100%;">
