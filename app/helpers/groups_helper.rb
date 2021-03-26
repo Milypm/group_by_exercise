@@ -24,18 +24,18 @@ module GroupsHelper
   end
 
   def show_edit_btn(group)
-    if current_user.id == group.user_id
-      link_to edit_group_path(group.id) do
-        raw("<i class='fas fa-pen'></i>")
-      end
+    return unless current_user.id == group.user_id
+
+    link_to edit_group_path(group.id) do
+      raw("<i class='fas fa-pen'></i>")
     end
   end
 
   def show_delete_btn(group)
-    if current_user.id == group.user_id
-      link_to group_path(group.id), method: :delete, data: { confirm: 'Delete this group?' } do
-        raw("<i class='far fa-trash-alt'></i>")
-      end
+    return unless current_user.id == group.user_id
+
+    link_to group_path(group.id), method: :delete, data: { confirm: 'Delete this group?' } do
+      raw("<i class='far fa-trash-alt'></i>")
     end
   end
 end
