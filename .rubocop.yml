@@ -1,4 +1,6 @@
 AllCops:
+  Exclude:
+    - "bin/*"
   require: rubocop-rails
 
   DisplayCopNames: true
