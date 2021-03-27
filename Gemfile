@@ -35,8 +35,8 @@ group :development, :test do
   # The RSpec testing framework
   gem 'capybara', '>= 3.26'
   gem 'rspec-rails'
-  gem 'selenium-webdriver'
   gem 'rubocop'
+  gem 'selenium-webdriver'
 end
 
 group :development do
