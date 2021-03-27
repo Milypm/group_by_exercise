@@ -10,7 +10,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: fit-content;
   color: #fff;
   overflow: scroll;
 }
@@ -127,6 +126,11 @@
   color: #fff;
 }
 
+.edit-group-icon i {
+  color: #fff;
+  font-size: 15px;
+}
+
 .group-name_date i:hover {
   color: #3778c2;
 }
@@ -143,11 +147,6 @@
 .group-date {
   font-size: 12px;
   margin-top: -13px;
-}
-
-.edit-group-icon i {
-  color: #fff;
-  font-size: 15px;
 }
 
 .group-editdel-btns {
