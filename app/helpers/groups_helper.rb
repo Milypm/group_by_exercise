@@ -15,10 +15,6 @@ module GroupsHelper
     end
   end
 
-  def forms_exercisesgroups_error(val)
-    render 'error' if val.errors.any?
-  end
-
   def author(exercise)
     User.find_by(id: Exercise.find_by(id: exercise.id).user_id).name
   end
