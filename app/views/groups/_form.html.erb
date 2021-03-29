@@ -1,27 +1,16 @@
 <%= form_with(model: group) do |form| %>
   <%= render 'layouts/navbar' %>
   <%= form.submit 'Save', class: 'nav-login-btn' %>
-  <% if group.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(group.errors.count, "error") %> prohibited this group from being saved:</h2>
-
-      <ul>
-        <% group.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
 
   <div class="edit-container">
     <div class="field between-navbar-form" style="width: 100%;">
       <% form.label :name %>
-      <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name' %>
+      <%= form.text_area :name, autofocus: true, autocomplete: "name", placeholder:"Name", class:'new-session-name', required: true %>
     </div>
 
     <div class="field mt-2 d-flex justify-content-center" style="width: 100%;">
       <% form.label :icon %>
-      <%= form.select :icon, options_for_select(@group_icons), { include_blank: 'Select Group Icon' }, class:'group-icons-field' %>
+      <%= form.select :icon, options_for_select(@group_icons), { include_blank: 'Select Group Icon' }, class:'group-icons-field', required: true %>
     </div>
 
     <div class="field mt-2" style="width: 100%;">

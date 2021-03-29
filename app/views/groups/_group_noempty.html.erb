@@ -10,14 +10,8 @@
             <p class="group-date"><%= group.created_at.strftime("%d %b %Y") %></p>
           </div>
           <div class="group-editdel-btns">
-            <% if current_user.id == group.user_id %>
-              <%= link_to edit_group_path(group.id) do %>
-                <i class="fas fa-pen edit-group-icon"></i>
-              <% end %>
-              <%= link_to group_path(group.id), method: :delete, data: { confirm: 'Delete this group?' } do %>
-                <i class="far fa-trash-alt"></i>
-              <% end %>
-            <% end %>
+            <span class="edit-group-icon"><%= show_edit_btn(group) %><span>
+            <%= show_delete_btn(group) %>
           </div>
         </div>
       </div>

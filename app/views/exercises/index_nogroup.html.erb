@@ -1,9 +1,7 @@
 <%= render 'layouts/navbar' %>
 <div class="myexercises-container">
-  <div class="container-scroll mb-2">
-    <%= check_indexnogroup_empty %>
-  </div>
-  <div class="exercise_add_new">
-    <%= link_to "ADD NEW EXERCISE", new_exercise_path, class: 'exercise_new_btn text-decoration-none text-light' %>
-  </div>
+  <%= check_indexnogroup_empty %>
+</div>
+<div class="exercise_add_new">
+  <%= link_to "ADD NEW EXERCISE", new_exercise_path, class: 'exercise_new_btn text-decoration-none text-light' %>
 </div>
