@@ -21,7 +21,7 @@
 - A user can edit or delete her/his own account, and her/his own exercises/groups.
 
 ## Live Project
-You can visit the live project here: [heroku-group-by-exercise](https://afternoon-taiga-35378.herokuapp.com/)
+You can visit the live project here: [render-group-by-exercise](https://exerscan-app.onrender.com)
 
 ## Project presentation
 View a short video presentation I did for this projeect here: [group-by-exercise-video](https://www.loom.com/share/9cf03764809045adb8764b40dad65153)
