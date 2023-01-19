@@ -20,9 +20,9 @@ test:
   timeout: 5000
 
 production:
-  <<: *default
-  url: <%= ENV['DATABASE_URL'] %>
-  # adapter: postgresql
-  # database: my_database_production
-  # pool: 5
-  # timeout: 5000
+  # <<: *default
+  # url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database: my_database_production
+  pool: 5
+  timeout: 5000
