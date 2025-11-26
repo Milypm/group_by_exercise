@@ -45,11 +45,11 @@ ActiveRecord::Schema.define(version: 2021_03_22_170708) do
 
   create_table "exercises", force: :cascade do |t|
     t.text "name"
+    t.integer "time"
     t.integer "user_id"
     t.integer "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "time"
   end
 
   create_table "groups", force: :cascade do |t|
