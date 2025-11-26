@@ -34,15 +34,14 @@ View a short video presentation I did for this projeect here: [group-by-exercise
 - Rubocop
 - RSpec / Capybara
 - Git
- 
+
 ## How to run it
 * It's recommended to use Git's latest version.
 * Clone or download the repo from here [group-by-exercise](https://github.com/Milypm/group_by_exercise) on your local system.
 - Click on the "Code" green button and copy HTTPS URL.
 - Go to your local system, on an empty folder, to clone the repo: "git clone 'HTTPS URL'".
 - Go to the repo root directory.
-- Install the dependencies with: 'bundle install'.
-- Migrate the database with: 'rails db:migrate'.
+- Run 'bin/setup' to set up the dev environment (dependencies/JS), and dev/test DB schema/migrations
 - Start the server: 'rails server' or 'rails s'.
 - Copy/open the path given to open the project in the browser: 'http://localhost:3000/'.
 
@@ -55,7 +54,7 @@ View a short video presentation I did for this projeect here: [group-by-exercise
 - GitHub: [@Milypm](https://github.com/Milypm)
 - LinkedIn: [Mily Puente](https://www.linkedin.com/in/milypuentem/)
 - Twitter: [@MilyPuente](https://twitter.com/MilyPuente)
- 
+
 ## Contribute :point_left:
 Any advice and suggestion for improvement are more than welcome.
 Visit [issues' section](https://github.com/Milypm/group_by_exercise/issues)
