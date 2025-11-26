@@ -30,9 +30,9 @@
         <%= form.number_field :user_id, id: :exercise_user_id, value:current_user.id, type: :hidden, class:'new-session-name' %>
       </div>
 
-      <div class="field text-center mt-2 d-flex flex-column align-items-center" style="width: 100%;">
+      <div class="field text-center mt-2 d-flex flex-column align-items-center border border-dark" style="width: 100%;">
         <%= form.label :group_id %>
-        <%= collection_select(:exercise, :group_id, Group.all, :id, :name, include_blank: 'None') %>
+        <%= form.collection_select :group_id, Group.all, :id, :name, include_blank: 'None', class:'dropdown-menu border border-dark' %>
       </div>
     </div>
   <% end %>
