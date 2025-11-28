@@ -3,20 +3,14 @@ require 'rails_helper'
 RSpec.describe 'exercises', type: :feature do
   let(:user1) { User.create(name: 'Mark', id: 1) }
   let(:user2) { User.create(name: 'Shane', id: 2) }
-  let(:exercise1) { Exercise.new(name: 'Running 5km', time: 45, id: 1, user_id: 1, group_id: 1) }
-  let(:exercise2) { Exercise.create(name: 'Yoga', time: 50, id: 2, user_id: 2) }
+  let(:exercise1) { Exercise.new(name: 'Running 5km', time: 45, user_id: 1, group_id: 1) }
+  let(:exercise2) { Exercise.create(name: 'Yoga', time: 50, user_id: 2) }
   let(:exercise3) { Exercise.create(name: 'Play football', time: 95, user_id: 2, group_id: 1) }
   let(:group) { Group.create(name: 'Cardio-run', icon: 'run-man', id: 1, user_id: 1) }
 
-  def login(user1)
+  def login(user)
     visit '/login'
-    fill_in 'Name', with: user1.name
-    click_button 'Log In'
-  end
-
-  def login(user2)
-    visit '/login'
-    fill_in 'Name', with: user2.name
+    fill_in 'Name', with: user.name
     click_button 'Log In'
   end
 
