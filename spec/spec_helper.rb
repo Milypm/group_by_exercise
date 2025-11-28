@@ -12,6 +12,9 @@
 # the additional setup, and require it from the spec files that actually need
 # it.
 #
+
+require 'capybara/rspec'
+require 'selenium/webdriver' # Needed for Selenium
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
@@ -91,4 +94,16 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+  Selenium::WebDriver::Chrome::Service.driver_path = '/usr/local/bin/chromedriver'
+
+  Capybara.register_driver :selenium_chrome do |app|
+    Capybara::Selenium::Driver.new(app, browser: :chrome)
+  end
+
+  # Set the default Capybara driver for feature tests
+  config.before(:each, type: :feature) do
+    Capybara.default_driver = :selenium_chrome
+    # Optional: For headless browsing
+    # Capybara.default_driver = :selenium_chrome_headless
+  end
 end
